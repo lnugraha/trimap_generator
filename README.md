@@ -26,10 +26,11 @@
 <b>TO DO:</b> recursive version of a module that can handle multiple input images
 
 ## Example ##
-<b>INPUT:</b> A binary image with foreground and background
+<b>INPUT:</b> A binary image with foreground and background <br/>
 ![alt text](./images/sample_image.png)
 
-<b>PROCESS:</b>
+<b>PROCESS:</b> Dilating the binary image <br/>
+`Python Code Here`
 
-<b>OUTPUT:</b> Trimap with 10 pixels unknown region
+<b>OUTPUT:</b> Trimap with 10 pixels unknown region <br/>
 ![alt text](./images/10px_sample_image.png_1.png)
