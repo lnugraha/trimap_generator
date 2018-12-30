@@ -10,31 +10,30 @@
 </ul>
 <br /><b>Input :</b> a binary image (from a segmented lesion)
 <br /><b>Output:</b> a trimap with unknown region (gray) from tumor dilation
-<br />
+<hr />
 <b>May 25, 2018: </b> <br/>
 
 - [x] Update(s): create a function that converts a binary image to a trimap
 - [x] To Do: documentation to accompany the code, a program that directly & recursively converts binary images to trimaps 
-
 ---
-
 <b>December 30, 2018: </b> <br/>
 
 - [x] Update(s): documentation, illustration, and tutorial
 - [x] Built a recursive version of the module that can handle multiple input images
 
 ---
-
 ## Example ##
 **PROCESS:** Dilating the binary image <br/>
 ```python
 name    = "sample_image.png";
 size    = 10;
 number  = 1;
-img = cv2.imread(name, cv2.IMREAD_GRAYSCALE)
-trimap_generate(img, name, size, number)
+bin_img = cv2.imread(name, cv2.IMREAD_GRAYSCALE)
+trimap_generate(bin_img, name, size, number)
 ```
+
+<center>
 |**INPUT:** A binary image | **OUTPUT:** Trimap with 10 pixels unknown region <br/> |
 |:----------:|:----------:|
 |![alt text](./images/sample_image.png)| ![alt text](./images/10px_sample_image.png_1.png) | 
-
+</center>
