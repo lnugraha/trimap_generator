@@ -32,8 +32,6 @@ bin_img = cv2.imread(name, cv2.IMREAD_GRAYSCALE)
 trimap_generate(bin_img, name, size, number)
 ```
 
-<center>
 |**INPUT:** A binary image | **OUTPUT:** Trimap with 10 pixels unknown region <br/> |
 |:----------:|:----------:|
 |![alt text](./images/sample_image.png)| ![alt text](./images/10px_sample_image.png_1.png) | 
-</center>
