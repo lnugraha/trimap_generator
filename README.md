@@ -18,11 +18,13 @@
 ---
 <b>December 30, 2018: </b> <br/>
 
-- [x] Update(s): documentation, illustration, and tutorial
+- [x] Update(s): documentation with illustrations
+- [x] Online interactive tutorial using Jupyter Notebook
+- [x] Separate trimap module, stored in trimap_module.py
+
 ---
 <b> TO DO: </b> <br/>
 - [x] Recursive function of the module that can handle multiple input images
-- [x] Online interactive module version using Jupyter Notebook
 
 ---
 ## Example ##
