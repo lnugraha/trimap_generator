@@ -19,10 +19,9 @@
 <b>December 30, 2018: </b> <br/>
 
 - [x] Update(s): documentation, illustration, and tutorial
-<br />
-
-** TO DO: **
-- [x] Built a recursive version of the module that can handle multiple input images
+---
+<b> TO DO: </b> <br/>
+- [x] Recursive function of the module that can handle multiple input images
 - [x] Online interactive module version using Jupyter Notebook
 
 ---
@@ -31,8 +30,8 @@
 **PROCESS:** Dilating the binary image <br/>
 ```python
 name    = "./image/samples/seg_image.png";
-size    = 10;
-number  = 1;
+size    = 10; # how many pixel extension do you want to dilate
+number  = 1;  # numbering purpose (in case youu have more than one image)
 bin_img = cv2.imread(name, cv2.IMREAD_GRAYSCALE)
 trimap_generate(bin_img, name, size, number)
 ```
