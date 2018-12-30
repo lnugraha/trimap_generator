@@ -27,8 +27,9 @@
 
 ## Example ##
 
-<b>INPUT:</b> A binary image with foreground and background <br/> | <b>OUTPUT:</b> Trimap with 10 pixels unknown region <br/> |
-![alt text](./images/sample_image.png)| ![alt text](./images/10px_sample_image.png_1.png) | 
+|<b>INPUT:</b> A binary image with foreground and background <br/> | <b>OUTPUT:</b> Trimap with 10 pixels unknown region <br/> |
+| ------------- |:-------------:|
+|![alt text](./images/sample_image.png)| ![alt text](./images/10px_sample_image.png_1.png) | 
 
 <b>PROCESS:</b> Dilating the binary image <br/>
 ```python
