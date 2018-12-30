@@ -35,7 +35,7 @@ trimap_generate(bin_img, name, size, number)
 |**FULL IMAGE**| **MASK IMAGE**|
 |:----------:|:----------:|
 |![alt text](./images/examples/full_img.png)| ![alt text](./images/examples/seg_img.png) | 
-|:----------:|:----------:|
+
 |**BINARY IMAGE** | **TRIMAP with 10 px unknown**|
 |:----------:|:----------:|
 |![alt text](./images/examples/seg_img.png)| ![alt text](./images/examples/trimap.png) | 
