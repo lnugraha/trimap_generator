@@ -33,9 +33,9 @@ bin_img = cv2.imread(name, cv2.IMREAD_GRAYSCALE)
 trimap_generate(bin_img, name, size, number)
 ```
 |**FULL IMAGE**| **MASK IMAGE**|**FOREGROUND**| **BACKGROUND**|
-|:----------:|:----------:|
+|:----------:|:----------:|:----------:|:----------:|
 |![alt text](./images/examples/full_img.png)| ![alt text](./images/examples/seg_img.png) |  ![alt text](./images/examples/fg_img.png) | ![alt text](./images/examples/bg_img.png) 
 
 |**BINARY IMAGE**|**TRIMAP with 10 px unknown**|**TRIMAP with 20 px unknown**|**TRIMAP with 30 px unknown**|
-|:----------:|:----------:|
+|:----------:|:----------:|:----------:|:----------:|
 |![alt text](./images/examples/seg_img.png)|![alt text](./images/examples/trimap.png)|![alt text](./images/examples/trimap_20.png)|![alt text](./images/examples/trimap_30.png)| 
