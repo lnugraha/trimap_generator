@@ -20,11 +20,11 @@
 
 - [x] Update(s): documentation with illustrations
 - [x] Online interactive tutorial using Jupyter Notebook
-- [x] Separate trimap module, stored in trimap_module.py
+- [x] Separate module: **trimap_module.py**
 
 ---
 <b> TO DO: </b> <br/>
-- [x] Recursive function of the module that can handle multiple input images
+- Recursive function of the module that can handle multiple input images
 
 ---
 ## Example ##
