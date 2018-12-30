@@ -19,7 +19,11 @@
 <b>December 30, 2018: </b> <br/>
 
 - [x] Update(s): documentation, illustration, and tutorial
+<br />
+
+** TO DO: **
 - [x] Built a recursive version of the module that can handle multiple input images
+- [x] Online interactive module version using Jupyter Notebook
 
 ---
 ## Example ##
@@ -36,6 +40,6 @@ trimap_generate(bin_img, name, size, number)
 |:----------:|:----------:|:----------:|:----------:|
 |![alt text](./images/examples/full_img.png)| ![alt text](./images/examples/seg_img.png) |  ![alt text](./images/examples/fg_img.png) | ![alt text](./images/examples/bg_img.png) 
 
-|**BINARY IMAGE**|**TRIMAP with 10 px unknown**|**TRIMAP with 20 px unknown**|**TRIMAP with 30 px unknown**|
+|**BINARY IMAGE**|**TRIMAP (10 PX)**|**TRIMAP (20 PX)**|**TRIMAP (30 PX)**|
 |:----------:|:----------:|:----------:|:----------:|
 |![alt text](./images/examples/seg_img.png)|![alt text](./images/examples/trimap.png)|![alt text](./images/examples/trimap_20.png)|![alt text](./images/examples/trimap_30.png)| 
