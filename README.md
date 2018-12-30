@@ -26,16 +26,14 @@
 
 **PROCESS:** Dilating the binary image <br/>
 ```python
-name    = "sample_image.png";
+name    = "./image/samples/seg_image.png";
 size    = 10;
 number  = 1;
 bin_img = cv2.imread(name, cv2.IMREAD_GRAYSCALE)
 trimap_generate(bin_img, name, size, number)
 ```
 |**FULL IMAGE**| **MASK IMAGE**|
-|:----------:|:----------:|
 |![alt text](./images/examples/full_img.png)| ![alt text](./images/examples/seg_img.png) | 
 |:----------:|:----------:|
-|**BINARY IMAGE** | **TRIMAP with 10 px unknown** <br/> |
-|:----------:|:----------:|
+|**BINARY IMAGE** | **TRIMAP with 10 px unknown**|
 |![alt text](./images/examples/seg_img.png)| ![alt text](./images/examples/trimap.png) | 
