@@ -23,6 +23,7 @@
 
 ---
 ## Example ##
+
 **PROCESS:** Dilating the binary image <br/>
 ```python
 name    = "sample_image.png";
@@ -31,7 +32,10 @@ number  = 1;
 bin_img = cv2.imread(name, cv2.IMREAD_GRAYSCALE)
 trimap_generate(bin_img, name, size, number)
 ```
-
-|**INPUT:** A binary image | **OUTPUT:** Trimap with 10 pixels unknown region <br/> |
+|**FULL IMAGE**| **MASK IMAGE**|
 |:----------:|:----------:|
-|![alt text](./images/sample_image.png)| ![alt text](./images/10px_sample_image.png_1.png) | 
+|![alt text](./images/examples/full_img.png)| ![alt text](./images/examples/seg_img.png) | 
+|:----------:|:----------:|
+|**BINARY IMAGE** | **TRIMAP with 10 px unknown** <br/> |
+|:----------:|:----------:|
+|![alt text](./images/examples/seg_img.png)| ![alt text](./images/examples/trimap.png) | 
