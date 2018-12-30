@@ -12,10 +12,14 @@
 
 <hr />
 <b>May 25, 2018: </b> <br/>
+
 - [x] Update(s): create a function that converts a binary image to a trimap
 - [x] To Do: documentation to accompany the code, a program that directly & recursively converts binary images to trimaps 
+
 ---
+
 <b>December 30, 2018: </b> <br/>
+
 - [x] Update(s): documentation, illustration, and tutorial
 
 <b>TO DO:</b> recursive version of a module that can handle multiple input images
