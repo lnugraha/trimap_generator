@@ -9,6 +9,7 @@
 Input: a binary image (from a segmented lesion)
 Output: a trimap with unknown region (gray) from tumor dilation
 <hr />
-<b>May 25, 2018: </b>
+<b>May 25, 2018: </b> <br/>
+
 - [x] Update(s): create a function that converts a binary image to a trimap
 - [x] To Do: documentation to accompany the code, a program that directly & recursively converts binary images to trimaps 
