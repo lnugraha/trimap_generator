@@ -30,7 +30,13 @@
 ![alt text](./images/sample_image.png)
 
 <b>PROCESS:</b> Dilating the binary image <br/>
-`Python Code Here`
+```python
+name    = "sample_image.png";
+size    = 10;
+number  = 1;
+img = cv2.imread(name, cv2.IMREAD_GRAYSCALE)
+trimap_generate(img, name, size, number)
+```
 
 <b>OUTPUT:</b> Trimap with 10 pixels unknown region <br/>
 ![alt text](./images/10px_sample_image.png_1.png)
