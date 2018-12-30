@@ -33,7 +33,7 @@
 ```python
 name    = "./image/samples/seg_image.png";
 size    = 10; # how many pixel extension do you want to dilate
-number  = 1;  # numbering purpose (in case youu have more than one image)
+number  = 1;  # numbering purpose (in case more than one image are available)
 bin_img = cv2.imread(name, cv2.IMREAD_GRAYSCALE)
 trimap_generate(bin_img, name, size, number)
 ```
