@@ -26,3 +26,4 @@
 
 
 ## Examples ##
+![alt text](./images/sample_image.png)
