@@ -24,21 +24,21 @@ On the other hand, <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha_p"
 <br /><b>Input :</b> a binary image (from a segmented lesion)
 <br /><b>Output:</b> a trimap with unknown region (gray) from tumor dilation
 <hr />
-<b>May 25, 2018: </b> <br/>
 
-- [x] Update(s): create a function that converts a binary image to a trimap
-- [x] To Do: documentation to accompany the code, a program that directly & recursively converts binary images to trimaps 
----
 <b>December 30, 2018: </b> <br/>
 
-- [x] Update(s): documentation with illustrations
+- [x] Documentation with illustrations
 - [x] Online interactive tutorial using Jupyter Notebook
 - [x] Separate module: **trimap_module.py**
+---
+<b>January 06, 2019: </b> <br/>
+
+- [X] Enable image erosion option prior within the trimap generation sub-routine
 
 ---
 <b> TO DO: </b> <br/>
 - [ ] Recursive function of the module that can handle multiple input images
-- [X] Enable image erosion option prior to trimap generation (January 06, 2019)
+- [ ] A more succint documentation (**ongoing**)
 
 ---
 ## Example ##
