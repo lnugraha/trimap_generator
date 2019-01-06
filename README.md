@@ -19,7 +19,7 @@ On the other hand, <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha_p"
   <li/>The binary image consists of two parts: foreground (white) which is the tumor and background (black) which is the surrounding region
   <li/>Keep in mind that the unknown region is simply an approximation rather than an exact delineation. Therefore, matting process becomes a crucial key to extract foreground images with exact precision (<b>Deep Image Matting</b> anyone?)
   <li />FYI, all binary images in this repository were generated from <b>U-Net</b> with a <b> Jaccard's Coefficient </b> of 0.94 (out of 1), indicating a high agreement between the physician's denoted ground truth and segmented mask images
-  <li />As I am not fully aware of other methods of generating mask images, image erosion may anticipate any overestimating issue during binary image generation
+  <li />As I am not fully aware of other binary-image-generating methods, image erosion may anticipate any overestimating issue
 </ul>
 <br /><b>Input :</b> a binary image (from a segmented lesion)
 <br /><b>Output:</b> a trimap with unknown region (gray) from tumor dilation
