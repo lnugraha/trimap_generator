@@ -1,5 +1,18 @@
 ## Automatic Trimap Generator ##
 
+<b>Introduction: </b> 
+<ul>
+<li/>In image matting, trimap has become an integral part of separating foreground from its background. Trimap attempts to separate foreground and background using unknown region to estimate specific regions in the image
+
+<li/> Mathematically, an image can be represented by the following equation:
+</ul>
+
+```math
+I_p = \alpha_p F_p + (1-\alpha_p) B_p
+```
+In this equation, $I_p$ denotes the entire image, $F_p$ denotes a defnite foreground, and $B_p$ denotes a definite background. <br/> 
+On the other hand, $\alpha_p$ is an alpha matte constants with a range value between 0 and 1, such that $\alpha_p \in [0,1]$. An $\alpha_p$ value of 0 indicates that the pixel belongs to a foreground; whereas an $\alpha_p$ value of 1 indicates otherwise. Any $\alpha_p$ value in between means a mixed pixel. 
+
 <b>Description: </b> 
 <ul>
 <li/>Generate a grayscale trimap (foreground, background, and unknown regions) from an input of binary (mask) image.
@@ -24,7 +37,8 @@
 
 ---
 <b> TO DO: </b> <br/>
-- Recursive function of the module that can handle multiple input images
+- [ ] Recursive function of the module that can handle multiple input images
+- [ ] Enable image erosion option prior to trimap generation
 
 ---
 ## Example ##
@@ -44,3 +58,7 @@ trimap_generate(bin_img, name, size, number)
 |**BINARY IMAGE**|**TRIMAP (10 PX)**|**TRIMAP (20 PX)**|**TRIMAP (30 PX)**|
 |:----------:|:----------:|:----------:|:----------:|
 |![alt text](./images/examples/seg_img.png)|![alt text](./images/examples/trimap.png)|![alt text](./images/examples/trimap_20.png)|![alt text](./images/examples/trimap_30.png)| 
+
+## References ##
+1. Vikas Gupta and Shanmuganathan Raman. (2017). "Automatic Trimap Generation for Image Matting". Indian Institute of Technology, Gandhinagar, IND [download](https://arxiv.org/pdf/1707.00333.pdf)
+2. Olivier Juan and Reanud Keriven. (2005). "Trimap Segmentation for Fast and User-Friendly Alpha Matting". FRA [download](http://imagine.enpc.fr/publications/papers/05vlsm_c.pdf)
