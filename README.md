@@ -3,13 +3,11 @@
 <b>Introduction: </b> 
 <ul>
 <li/>In image matting, trimap has become an integral part of separating foreground from its background. Trimap attempts to separate foreground and background using unknown region to estimate specific regions in the image
-
 <li/> Mathematically, an image can be represented by the following equation:
 </ul>
 
-```math
-I_p = \alpha_p F_p + (1-\alpha_p) B_p
-```
+<a href="https://www.codecogs.com/eqnedit.php?latex=I_p&space;=&space;\alpha_p&space;F_p&space;&plus;&space;(1-\alpha_p)B_p" target="_blank"><img src="https://latex.codecogs.com/gif.latex?I_p&space;=&space;\alpha_p&space;F_p&space;&plus;&space;(1-\alpha_p)B_p" title="I_p = \alpha_p F_p + (1-\alpha_p)B_p" /></a>
+
 In this equation, $I_p$ denotes the entire image, $F_p$ denotes a defnite foreground, and $B_p$ denotes a definite background. <br/> 
 On the other hand, $\alpha_p$ is an alpha matte constants with a range value between 0 and 1, such that $\alpha_p \in [0,1]$. An $\alpha_p$ value of 0 indicates that the pixel belongs to a foreground; whereas an $\alpha_p$ value of 1 indicates otherwise. Any $\alpha_p$ value in between means a mixed pixel. 
 
