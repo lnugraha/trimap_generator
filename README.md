@@ -8,8 +8,8 @@
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=I_p&space;=&space;\alpha_p&space;F_p&space;&plus;&space;(1-\alpha_p)B_p" target="_blank"><img src="https://latex.codecogs.com/gif.latex?I_p&space;=&space;\alpha_p&space;F_p&space;&plus;&space;(1-\alpha_p)B_p" title="I_p = \alpha_p F_p + (1-\alpha_p)B_p" /></a>
 
-In this equation, $I_p$ denotes the entire image, $F_p$ denotes a defnite foreground, and $B_p$ denotes a definite background. <br/> 
-On the other hand, $\alpha_p$ is an alpha matte constants with a range value between 0 and 1, such that $\alpha_p \in [0,1]$. An $\alpha_p$ value of 0 indicates that the pixel belongs to a foreground; whereas an $\alpha_p$ value of 1 indicates otherwise. Any $\alpha_p$ value in between means a mixed pixel. 
+In this equation, I<sub>p</sub> denotes the entire image, F<sub>p</sub> denotes a defnite foreground, and B<sub>p</sub> denotes a definite background. <br/> 
+On the other hand, <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha_p" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\alpha_p" title="\alpha_p" /></a> is an alpha matte constants with a range value between 0 and 1, such that <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha_p&space;\in&space;[0,1]" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\alpha_p&space;\in&space;[0,1]" title="\alpha_p \in [0,1]" /></a>. An <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha_p" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\alpha_p" title="\alpha_p" /></a> value of 0 indicates that the pixel belongs to a foreground; whereas an <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha_p" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\alpha_p" title="\alpha_p" /></a> value of 1 indicates otherwise. Any <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha_p" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\alpha_p" title="\alpha_p" /></a> value in between means a mixed pixel. 
 
 <b>Description: </b> 
 <ul>
