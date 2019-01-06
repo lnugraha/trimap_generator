@@ -36,7 +36,7 @@ On the other hand, <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha_p"
 ---
 <b> TO DO: </b> <br/>
 - [ ] Recursive function of the module that can handle multiple input images
-- [ ] Enable image erosion option prior to trimap generation
+- [X] Enable image erosion option prior to trimap generation (January 06, 2019)
 
 ---
 ## Example ##
