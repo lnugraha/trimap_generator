@@ -37,6 +37,7 @@ On the other hand, <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha_p"
 - [X] Recursive function of the module that can handle multiple input images
 ---
 <b> TO DO: </b> <br/>
+- [ ] Error handler; i.e., sub-routine only accepts black and white image only
 - [ ] A more succint documentation (**ongoing**)
 
 ---
@@ -59,7 +60,7 @@ trimap_generate(bin_img, name, size, number, erosion=False)
 |![alt text](./images/examples/seg_img.png)|![alt text](./images/examples/trimap.png)|![alt text](./images/examples/trimap_20.png)|![alt text](./images/examples/trimap_30.png)| 
 
 **2 Impact of Eroding Foreground** <br/>
-The following trimap illustrates what will happen when erosion function is activated. Illustration starts from zero erosion, followed with one iteration, three iterations, five iterations, until eleven iterations (increments of two). <br />
+The illustration starts from zero foreground erosion, followed with one, three, five, until eleven iterations (an increment of two). <br />
 
 <p align="center">
 <img src = "./images/examples/eroded_image.gif" height="200" width="200">
