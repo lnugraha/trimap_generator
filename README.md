@@ -62,7 +62,7 @@ trimap_generate(bin_img, name, size, number, erosion=False)
 The following trimap illustrates what will happen when erosion function is activated. Illustration starts from zero erosion, followed with one iteration, three iterations, five iterations, until eleven iterations (increments of two). <br />
 
 <p align="center">
-<img src = "./images/examples/eroded_image.gif">
+<img src = "./images/examples/eroded_image.gif" height="200" width="200">
 </p><br />
 
 ## References ##
