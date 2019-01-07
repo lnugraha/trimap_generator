@@ -12,9 +12,10 @@ def trimap_generate(image, name, size, number, erosion=False):
     kernel    = np.ones((pixels,pixels),np.uint8)               ## How many pixel of extension do I get
 
     if erosion is not False:
-        erosion_kernel = np.ones((3,3), np.uint8)               ## Design an odd-sized erosion kernel
-        img = cv2.erode(img, erosion_kernel, iterations=3)      ## How many erosion do you expect
-        img = np.where(img > 0, 255, img)                       ## Any gray-clored pixel becomes white (smoothing)
+        erosion = int(erosion)                                    
+        erosion_kernel = np.ones((3,3), np.uint8)                 ## Design an odd-sized erosion kernel
+        img = cv2.erode(img, erosion_kernel, iterations=erosion)  ## How many erosion do you expect
+        img = np.where(img > 0, 255, img)                         ## Any gray-clored pixel becomes white (smoothing)
 
     dilation  = cv2.dilate(image, kernel, iterations = 1)
 
