@@ -33,17 +33,16 @@ On the other hand, <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha_p"
 ---
 <b>January 06, 2019: </b> <br/>
 
-- [X] Enable image erosion option prior within the trimap generation sub-routine
-
+- [X] Enable image erosion option within the sub-routine
+- [X] Recursive function of the module that can handle multiple input images
 ---
 <b> TO DO: </b> <br/>
-- [ ] Recursive function of the module that can handle multiple input images
 - [ ] A more succint documentation (**ongoing**)
 
 ---
-## Example ##
+## Examples ##
 
-**PROCESS:** Dilating the binary image <br/>
+**1 Dilating the binary image** <br/>
 ```python
 name    = "./image/samples/seg_image.png";
 size    = 10; # how many pixel extension do you want to dilate
@@ -58,6 +57,13 @@ trimap_generate(bin_img, name, size, number, erosion=False)
 |**BINARY IMAGE**|**TRIMAP (10 PX)**|**TRIMAP (20 PX)**|**TRIMAP (30 PX)**|
 |:----------:|:----------:|:----------:|:----------:|
 |![alt text](./images/examples/seg_img.png)|![alt text](./images/examples/trimap.png)|![alt text](./images/examples/trimap_20.png)|![alt text](./images/examples/trimap_30.png)| 
+
+**2 Impact of Eroding Foreground** <br/>
+The following trimap illustrates what will happen when erosion function is activated. Illustration starts from zero erosion, followed with one iteration, three iterations, five iterations, until eleven iterations (increments of two). <br />
+
+<p align="center">
+(./images/examples/eroded_image.gif)
+</p><br />
 
 ## References ##
 1. Vikas Gupta and Shanmuganathan Raman. (2017). "Automatic Trimap Generation for Image Matting". Indian Institute of Technology, Gandhinagar, IND [download](https://arxiv.org/pdf/1707.00333.pdf)
