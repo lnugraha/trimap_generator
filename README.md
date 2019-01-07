@@ -19,7 +19,7 @@ On the other hand, <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha_p"
   <li/>The binary image consists of two parts: foreground (white) which is the tumor and background (black) which is the surrounding region
   <li/>Keep in mind that the unknown region is simply an approximation rather than an exact delineation. Therefore, matting process becomes a crucial key to extract foreground images with exact precision (<b>Deep Image Matting</b> anyone?)
   <li />FYI, all binary images in this repository were generated from <b>U-Net</b> with a <b> Jaccard's Coefficient </b> of 0.94 (out of 1), indicating a high agreement between the physician's denoted ground truth and segmented mask images
-  <li />As I am not fully aware of other binary-image-generating methods, image erosion may anticipate any overestimating issue
+  <li />Image erosion may anticipate any overestimating foreground issue
 </ul>
 <br /><b>Input :</b> a binary image (from a segmented lesion)
 <br /><b>Output:</b> a trimap with unknown region (gray) from tumor dilation
@@ -37,7 +37,7 @@ On the other hand, <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha_p"
 - [X] Recursive function of the module that can handle multiple input images
 ---
 <b> TO DO: </b> <br/>
-- [ ] Error handler; i.e., sub-routine only accepts black and white image only
+- [ ] Error handler; i.e., only accepts black and white image only
 - [ ] A more succint documentation (**ongoing**)
 
 ---
@@ -60,7 +60,7 @@ trimap_generate(bin_img, name, size, number, erosion=False)
 |![alt text](./images/examples/seg_img.png)|![alt text](./images/examples/trimap.png)|![alt text](./images/examples/trimap_20.png)|![alt text](./images/examples/trimap_30.png)| 
 
 **2 Impact of Eroding Foreground** <br/>
-The illustration starts from zero foreground erosion, followed with one, three, five, until eleven iterations (an increment of two). <br />
+The illustration starts with zero erosion; followed with one, three, five, until eleven iterations (an increment of two). <br />
 
 <p align="center">
 <img src = "./images/examples/eroded_image.gif" height="200" width="200">
