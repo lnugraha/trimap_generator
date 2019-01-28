@@ -1,7 +1,7 @@
 ## Automatic Trimap Generator ##
 
 ### Keyword: Alpha Compositioning, Trimap ###
-### 關鍵: $$\alpha$$合成, 三分圖 ###
+### 關鍵: \(\alpha\)合成, 三分圖 ###
 
 <b>Introduction: </b> 
 <ul>
