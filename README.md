@@ -1,5 +1,8 @@
 ## Automatic Trimap Generator ##
 
+###Keyword: Alpha Compositioning, Trimap ###
+###關鍵: $\alpha$合成三分圖###
+
 <b>Introduction: </b> 
 <ul>
 <li/>In image matting, trimap has become an integral part of separating foreground from its background. Trimap attempts to separate foreground and background using unknown region to estimate specific regions in the image
@@ -25,19 +28,22 @@ On the other hand, <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha_p"
 <br /><b>Output:</b> a trimap with unknown region (gray) from tumor dilation
 <hr />
 
+<b>January 06, 2019: </b> <br/>
+
+- [X] Enable image erosion option within the sub-routine
+- [X] Recursive function of the module that can handle multiple input images
+
+
 <b>December 30, 2018: </b> <br/>
 
 - [x] Documentation with illustrations
 - [x] Online interactive tutorial using Jupyter Notebook
 - [x] Separate module: **trimap_module.py**
----
-<b>January 06, 2019: </b> <br/>
 
-- [X] Enable image erosion option within the sub-routine
-- [X] Recursive function of the module that can handle multiple input images
 ---
 <b> TO DO: </b> <br/>
 - [ ] Error handler; i.e., only accepts black and white image only
+- [ ] Build an interactive module version using widgets
 - [ ] A more succint documentation (**ongoing**)
 
 ---
