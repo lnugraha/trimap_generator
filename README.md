@@ -1,6 +1,6 @@
 ## Automatic Trimap Generator ##
 
-#### Keyword: Alpha Compositioning,Trimap ####
+#### Keywords: Alpha Compositioning,Trimap ####
 #### 關鍵: Alpha合成、三分圖 ####
 #### キーワード:アルファチャンネル、マスク画像 ####
 
@@ -33,7 +33,6 @@ On the other hand, <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha_p"
 
 - [X] Enable image erosion option within the sub-routine
 - [X] Recursive function of the module that can handle multiple input images
-
 
 <b>December 30, 2018: </b> <br/>
 
