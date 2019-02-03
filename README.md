@@ -4,7 +4,7 @@
 #### 關鍵: Alpha合成、三分圖 ####
 #### キーワード:アルファチャンネル、マスク画像 ####
 
-<b>Introduction/簡介/紹介</b>
+## Introduction/簡介/紹介 ##
 <ul>
 <li/>In image matting, trimap has become an integral part of separating foreground from its background. Trimap attempts to separate foreground and background using unknown region to estimate specific regions in the image
 <li/> Mathematically, an image can be represented by the following equation:
@@ -15,7 +15,7 @@
 In this equation, <i>I<sub>p</sub></i> denotes the entire image, <i>F<sub>p</sub></i> denotes a defnite foreground, and <i>B<sub>p</sub></i> denotes a definite background. <br/> 
 On the other hand, <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha_p" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\alpha_p" title="\alpha_p" /></a> is an alpha matte constants with a range value between 0 and 1. An <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha_p" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\alpha_p" title="\alpha_p" /></a> value of 0 indicates that the pixel belongs to a foreground; whereas an <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha_p" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\alpha_p" title="\alpha_p" /></a> value of 1 indicates otherwise. Any <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha_p" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\alpha_p" title="\alpha_p" /></a> value in between means a mixed pixel. <br /><br />
 
-<b>Description/概念/概要</b> 
+## Description/概念/概要 ## 
 <ul>
   <li/>Generate a trimap (foreground, background, and unknown regions) from an input of binary (mask) image.
   <li/>Foreground has a pixel value of 255; background has a pixel value of 0; and unknown has a pixel value of 127.
