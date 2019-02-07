@@ -1,9 +1,9 @@
 <h3><p align = "center"> Automatic Trimap Generator </p></h3> 
 <hr />
 
-#### Keywords: Alpha Compositioning,Trimap ####
-#### 關鍵: Alpha合成、三分圖 ####
-#### キーワード:アルファチャンネル、マスク画像 ####
+##### Keywords: Alpha Compositioning,Trimap #####
+##### 關鍵: Alpha合成、三分圖 #####
+##### キーワード:アルファチャンネル、マスク画像 #####
 
 ## Introduction/簡介/紹介 ##
 <ul>
