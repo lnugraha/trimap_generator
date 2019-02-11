@@ -1,21 +1,6 @@
 import cv2, os
 import numpy as np
 
-def check_image(image):
-    """
-    To be completed:
-    This function checks whether the input image is binary.
-    In other words, the following images will be rejected: grayscale, black only, white only, and RGB
-    """
-    width  = image.shape[0];
-    height = image.shape[1];
-    
-    #for i in range(0,width):
-    #    for j in range (0,height):
-    if (image[0:,0:] == (0,0,0)): # if the image contains any value
-        print("ERROR: Non-Binary Image Detected")
-        return False
-
 def trimap_generate(image, name, size, number, erosion=False):
     """
     This function creates a trimap based on simple dilation algorithm
@@ -23,8 +8,15 @@ def trimap_generate(image, name, size, number, erosion=False):
                 the last argument is optional; i.e., how many iterations will the image get eroded                 
     Output    : a trimap
     """
-
-    check_image(image);
+    width  = image.shape[0];
+    height = image.shape[1];
+    
+    for i in range(0,width):
+        for j in range (0,height):
+            if (image[i,j] != 0 or image[i,j] != 255):
+                print("ERROR: Non-Binary Image Detected")
+                return False
+    
 
     pixels    = 2*size + 1;                                     ## Double and plus 1 to have an odd-sized kernel            
     kernel    = np.ones((pixels,pixels),np.uint8)               ## How many pixel of extension do I get
