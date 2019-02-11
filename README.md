@@ -1,4 +1,5 @@
-### Automatic Trimap Generator ###
+## Automatic Trimap Generator ##
+
 ##### Keywords: Alpha Compositioning,Trimap #####
 ##### 關鍵: Alpha合成、三分圖 #####
 ##### キーワード:アルファチャンネル、マスク画像 #####
