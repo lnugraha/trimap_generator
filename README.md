@@ -41,9 +41,7 @@ On the other hand, <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha_p"
 
 ---
 <b> TO DO: </b> <br/>
-- [ ] **Unit Testing**: (1) prevent erosion from diminishing the entire foreground, and (2) reject non-binary images
-- [ ] **Error Handler**: only accepts binary image
-- [ ] **Interactive Module**: Widgets
+- [ ] **Unit Testing**: (1) prevent erosion from diminishing the entire foreground, and (2) reject non-binary images (RGB, grayscale, all white, or all black)
 - [ ] **Python Documentation**: Doxygen
 
 ---
