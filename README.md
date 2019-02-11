@@ -1,4 +1,4 @@
-### Automatic Trimap Generator ###
+### Automatic Trimap Generator ### <hr/>
 
 ##### Keywords: Alpha Compositioning,Trimap #####
 ##### 關鍵: Alpha合成、三分圖 #####
