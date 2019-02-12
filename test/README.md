@@ -1,6 +1,7 @@
-<h3><p align="center">Designated for Unit Testing</p></h3>
+## Designated for Unit Testing ##
 
 Issues to be addressed:
-<ol>
-<li /> Prevent image erosion from eroding the entire image (decide the maximum limit) 
-<li /> Reject all non-binary images
+-[ ] Prevent image erosion from eroding the entire image
+-[ ] Adaptive method to decide maximum erosion kernel
+-[ ] Reject all non-binary images (monochrome, grayscale, and RGB)
+-[ ] Unsupervised Learning Method to diminish all non-dominating foreground regions
