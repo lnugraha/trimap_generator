@@ -31,8 +31,8 @@ On the other hand, <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha_p"
 
 <b>February 12, 2019: </b> <br/>
 
-- [X] Error Handler: **(1.)** reject non-binary images (all black, all white, grayscale, and RGB),
- **(2.)** terminate the program if the erosion function annihilates the entire foreground
+- [X] **Error Handler** reject non-binary images (all black, all white, grayscale, and RGB); terminate the program if the erosion function annihilates the entire foreground
+- [X] **Doxypypy** Doxygen documentation (ongoing)
 
 <b>January 06, 2019: </b> <br/>
 
@@ -41,7 +41,7 @@ On the other hand, <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha_p"
 
 ---
 <b> TO DO: </b> <br/>
-- [ ] **Python Documentation**: Doxygen
+- [ ] **Flow Chart **
 - [ ] **Optimization**: Cython-enabled inside check_image function
 - [ ] **Unit Testing**
 - [ ] **Error Handler**: (1.) adaptive erosion function, (2.) unsupervised learning to distinguish dominant foreground
