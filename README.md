@@ -29,15 +29,14 @@ On the other hand, <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha_p"
 <br /><b>Output/輸出/出力:</b> a trimap with unknown region (gray) from tumor dilation
 <hr />
 
+<b>February 12, 2019: </b> <br/>
+
+- [X] Error Handler: **(1.)** Reject non-binary images (all black, all white, grayscale, and RGB), **(2.)** Terminate the program should the erosion function annihilates the entire foreground
+
 <b>January 06, 2019: </b> <br/>
 
 - [X] Enable image erosion option
 - [X] Recursive function of the module that can handle multiple input images
-
-<b>December 30, 2018: </b> <br/>
-
-- [x] Online interactive tutorial using Jupyter Notebook
-- [x] Separate module: **trimap_module.py**
 
 ---
 <b> TO DO: </b> <br/>
