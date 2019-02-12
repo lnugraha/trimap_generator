@@ -1,5 +1,5 @@
 import unittest
-from trimap_module import trimap_generate
+from trimap_module import trimap
 
 class CheckImages(unittest.TestCase):
     pass
