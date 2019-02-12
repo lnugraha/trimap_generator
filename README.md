@@ -31,7 +31,8 @@ On the other hand, <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha_p"
 
 <b>February 12, 2019: </b> <br/>
 
-- [X] Error Handler: **(1.)** Reject non-binary images (all black, all white, grayscale, and RGB), **(2.)** Terminate the program should the erosion function annihilates the entire foreground
+- [X] Error Handler: **(1.)** reject non-binary images (all black, all white, grayscale, and RGB),
+ **(2.)** terminate the program should the erosion function annihilates the entire foreground
 
 <b>January 06, 2019: </b> <br/>
 
@@ -41,20 +42,24 @@ On the other hand, <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha_p"
 ---
 <b> TO DO: </b> <br/>
 - [ ] **Python Documentation**: Doxygen
-- [ ] **Optimization**: Cython-enabled module
+- [ ] **Optimization**: Cython-enabled inside check_image function
 - [ ] **Unit Testing**
-- [ ] **Error Handler**: using unsupervised learning
+- [ ] **Error Handler**: (1.) adaptive erosion function, (2.) using supervised learning to distinguish foreground
 
 ---
 ## Examples ##
 
 **1 Dilating the binary image** <br/>
 ```python
+
+import cv2, os, sys
+from trimap_module import trimap
+
 name    = "./image/samples/seg_image.png";
 size    = 10; # how many pixel extension do you want to dilate
 number  = 1;  # numbering purpose (in case more than one image are available)
 bin_img = cv2.imread(name, cv2.IMREAD_GRAYSCALE)
-trimap_generate(bin_img, name, size, number, erosion=False)
+trimap(bin_img, name, size, number, erosion=False)
 ```
 |**FULL IMAGE**| **MASK IMAGE**|**FOREGROUND**| **BACKGROUND**|
 |:----------:|:----------:|:----------:|:----------:|
