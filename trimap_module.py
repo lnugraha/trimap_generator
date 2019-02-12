@@ -29,7 +29,7 @@ def check_image(image):
                 else:
                     return True
 
-def trimap_generate(image, name, size, number, erosion=False):
+def trimap(image, name, size, number, erosion=False):
     """
     This function creates a trimap based on simple dilation algorithm
     Inputs [4]: a binary image (black & white only), name of the image, dilation pixels 
@@ -65,7 +65,7 @@ def trimap_generate(image, name, size, number, erosion=False):
     new_name = '{}px_'.format(size) + name + '_{}.png'.format(number);
     cv2.imwrite(os.path.join(path , new_name) , remake)
 
-""" Uncomment this part to test the modules above as Python script
+""" Uncomment to test the Python code
 if __name__ == '__main__':
     name  = "./images/test_images/test_image_0.png"; # ONLY test_image_0.png shall succeed
     image = cv2.imread(name, cv2.IMREAD_GRAYSCALE)
@@ -73,7 +73,6 @@ if __name__ == '__main__':
     number = name[-5];
     title = "test_image"
 
-    trimap_generate(image, title, size, number, erosion=10);
+    trimap(image, title, size, number, erosion=10);
     print("Here")
 """
-
