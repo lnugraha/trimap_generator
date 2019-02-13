@@ -1,33 +1,71 @@
 import cv2, os, sys
 import numpy as np
 
+def print_image(image,title,number):
+    """
+    Print your image to a text file
+    """
+    print(title+"_"+number);
+    f= open("image.txt","w+")
+    for i in range(0, image.shape[0]):
+        for j in range(0, image.shape[1]):
+            f.write("%d " %image[i,j])
+        f.write("\n")
+    f.close()
+
+
 def check_image(image):
     """
-    This function checks whether the input image is binary.
-    To be completed: optimization in nested for-loop using Cython
-    """
-    width  = image.shape[0]; height = image.shape[1];
+    Args:
+        image: input image to be checked
 
+    Returns:
+        binary image
+
+    Raises:
+        RGB image, grayscale image, all-black, and all-white image
+
+    TODO:
+    1. Optimization in nested for-loop using Cython
+    2. Unsupervised Clustering - 
+    """
     # So far, input image is converted to grayscale;
     # thus this is not an issue at the moment
     if len(image.shape) > 2:
         print("ERROR: non-binary image (RGB)");
         sys.exit();
+    
+    row = image.shape[0];
+    col = image.shape[1];
 
-    if cv2.countNonZero(image) == 0:
+    smallest = image.min(axis=0).min(axis=0);
+    largest  = image.max(axis=0).max(axis=0);
+
+    #print(row,col);
+    #print(smallest, largest);
+
+    if (smallest == 0 and largest == 0):
         print("ERROR: non-binary image (all black)");
         sys.exit();
+    elif (smallest == 255 and largest == 255):
+        print("ERROR: non-binary image (all white)");
+        sys.exit();
+    elif (smallest > 0 or largest < 255 ): # Temporary Solution for grayscale
+        print("ERROR: non-binary image (grayscale)");
+        sys.exit();
     else:
-        for i in range(0,width):
-            for j in range (0,height):
-                if (image[i,j] == 255 ):
-                    print("ERROR: non-binary (all white)");
-                    sys.exit();
-                elif (image[i,j] != 0 and image[i,j] != 255 ):
-                    print("ERROR: non-binary (grayscale)")
-                    sys.exit();
-                else:
-                    return True
+        return True
+    
+    """ REQUIRED REVISION - USE UNSUPERVISED LEARNING
+    for i in range(0,row):
+        for j in range (0,col):
+            if (image[i,j] != 0 and image[i,j] != 255):
+                print("ERROR: non-binary (grayscale)")
+                sys.exit();
+            else:
+                continue
+    """
+
 
 def trimap(image, name, size, number, erosion=False):
     """
@@ -65,14 +103,13 @@ def trimap(image, name, size, number, erosion=False):
     new_name = '{}px_'.format(size) + name + '_{}.png'.format(number);
     cv2.imwrite(os.path.join(path , new_name) , remake)
 
-""" Uncomment to test the Python code
+
 if __name__ == '__main__':
-    name  = "./images/test_images/test_image_0.png"; # ONLY test_image_0.png shall succeed
-    image = cv2.imread(name, cv2.IMREAD_GRAYSCALE)
+    path  = "./images/test_images/test_image_0.png";
+
+    image = cv2.imread(path, cv2.IMREAD_GRAYSCALE);
     size = 10;         
-    number = name[-5];
+    number = path[-5];
     title = "test_image"
 
-    trimap(image, title, size, number, erosion=10);
-    print("Here")
-"""
+    trimap(image, title, size, number, erosion=False);
