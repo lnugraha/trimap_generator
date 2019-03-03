@@ -58,7 +58,7 @@ def check_image(image):
     # Date: 03/03/2019                          #
     # if the pixel value is neither 0 nor 255,  #
     # it will be converted to 255               #
-    # Issue with test_image_9.png               #
+    # Issue: test_image_10.png (non-dominant FG)#
     #############################################
     for i in range(0,row):
         for j in range (0,col):
@@ -96,7 +96,7 @@ def trimap(image, name, size, number, erosion=False):
     # Date: 03/03/2019                          #
     # Check pixel value = 200,                  #
     # should be converted to a flexible value   #
-    # Issue with test_image_8.png (195 pix val) #
+    # Issue: test_image_8.png (195 pix val) #
     #############################################
     dilation  = np.where(dilation == 255, 127, dilation) 	## WHITE to GRAY
     remake    = np.where(dilation != 127, 0, dilation)		## Smoothing
