@@ -4,7 +4,7 @@
 ##### 關鍵: Alpha合成、三分圖 #####
 ##### キーワード:アルファチャンネル、マスク画像 #####
 
-## Introduction/簡介/紹介 ##
+## Introduction ##
 <ul>
 <li/>In image matting, trimap has become an integral part of separating foreground from its background. Trimap attempts to separate foreground and background using unknown region to estimate specific regions in the image
 <li/> Mathematically, an image can be represented by the following equation:
@@ -15,7 +15,7 @@
 In this equation, <i>I<sub>p</sub></i> denotes the entire image, <i>F<sub>p</sub></i> denotes a definite foreground, and <i>B<sub>p</sub></i> denotes a definite background. <br/>
 On the other hand, <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha_p" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\alpha_p" title="\alpha_p" /></a> is an alpha matte constants with a range value between 0 and 1. An <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha_p" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\alpha_p" title="\alpha_p" /></a> value of 0 indicates that the pixel belongs to a background; whereas an <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha_p" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\alpha_p" title="\alpha_p" /></a> value of 1 indicates otherwise. Any <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha_p" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\alpha_p" title="\alpha_p" /></a> value in between means a mixed pixel that has to be determined. <br /><br />
 
-## Descriptions/概念/概要 ##
+## Descriptions ##
 <ul>
   <li/>Generate a trimap (foreground, background, and unknown regions) from an input of binary (mask) image.
   <li/>Foreground has a pixel value of 255; background has a pixel value of 0; and unknown has a pixel value of 127.
@@ -25,8 +25,8 @@ On the other hand, <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha_p"
   <li />All binary images in this repository were generated from <b>U-Net</b> with a <b> Jaccard's Coefficient </b> of 0.94 (out of 1), indicating a high agreement between the ground truth and segmented mask images
   <li />Image erosion may anticipate any overestimating foreground issue
 </ul>
-<br /><b>Input/輸入/入力 :</b> a binary image (from a segmented lesion)
-<br /><b>Output/輸出/出力:</b> a trimap with unknown region (gray) from tumor dilation
+<br /><b>Input:</b> a binary image (from a segmented lesion)
+<br /><b>Output:</b> a trimap with unknown region (gray) from tumor dilation
 <hr />
 
 <b>February 12, 2019: </b> <br/>
@@ -46,6 +46,13 @@ On the other hand, <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha_p"
 - [ ] **Unit Testing**
 - [ ] **Error Handler**: (1.) adaptive erosion function, (2.) unsupervised learning to distinguish dominant foreground
 
+---
+## Required Packages ##
+```python
+import cv2
+import numpy
+import sklearn
+```
 ---
 ## Examples ##
 
@@ -76,6 +83,6 @@ The illustration starts with zero erosion; followed with one, three, five, until
 <img src = "./images/examples/eroded_image.gif" height="200" width="200">
 </p><br />
 
-## References/參考/外部参考 ##
+## References ##
 1. Vikas Gupta and Shanmuganathan Raman. (2017). "Automatic Trimap Generation for Image Matting". Indian Institute of Technology, Gandhinagar, IND [download](https://arxiv.org/pdf/1707.00333.pdf)
 2. Olivier Juan and Reanud Keriven. (2005). "Trimap Segmentation for Fast and User-Friendly Alpha Matting". FRA [download](http://imagine.enpc.fr/publications/papers/05vlsm_c.pdf)
