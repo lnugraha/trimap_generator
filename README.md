@@ -42,9 +42,8 @@ On the other hand, <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha_p"
 ---
 <b> TO DO: </b> <br/>
 - [ ] **Flow Chart**
-- [ ] **Optimization**: Cython-enabled inside check_image function
+- [ ] **Finding the most dominant foreground**
 - [ ] **Unit Testing**
-- [ ] **Error Handler**: (1.) adaptive erosion function, (2.) unsupervised learning to distinguish dominant foreground
 
 ---
 ## Required Packages ##
