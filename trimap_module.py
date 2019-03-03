@@ -1,6 +1,5 @@
 import cv2, os, sys
 import numpy as np
-from sklearn.neighbors import KNeighborsClassifier
 
 def print_image(image,title,number):
     """
@@ -27,11 +26,9 @@ def check_image(image):
         RGB image, grayscale image, all-black, and all-white image
 
     TODO:
-    1. Optimization in nested for-loop using Cython
-    2. Unsupervised Clustering - find the largest possible chunk using KNN
+    Optimization for-loop using Cython
     """
     # So far, input image is converted to grayscale;
-    # thus this is not an issue at the moment
     if len(image.shape) > 2:
         print("ERROR: non-binary image (RGB)");
         sys.exit();
@@ -39,8 +36,8 @@ def check_image(image):
     row = image.shape[0];
     col = image.shape[1];
 
-    smallest = image.min(axis=0).min(axis=0);
-    largest  = image.max(axis=0).max(axis=0);
+    smallest = image.min(axis=0).min(axis=0); # lowest pixel value; should be 0 (black)
+    largest  = image.max(axis=0).max(axis=0); # highest pixel value; should be 1 (white)
 
     #print(row,col);
     #print(smallest, largest);
@@ -57,15 +54,18 @@ def check_image(image):
     else:
         return True
 
-    """ REQUIRED REVISION - USE UNSUPERVISED LEARNING
+    #############################################
+    # Date: 03/03/2019                          #
+    # if the pixel value is neither 0 nor 255,  #
+    # it will be converted to 255               #
+    # Issue with test_image_9.png               #
+    #############################################
     for i in range(0,row):
         for j in range (0,col):
-            if (image[i,j] != 0 and image[i,j] != 255):
-                print("ERROR: non-binary (grayscale)")
-                sys.exit();
+            if (image[i,j] != 0 or image[i,j] != 255):
+                image[i,j] = 255;
             else:
                 continue
-    """
 
 
 def trimap(image, name, size, number, erosion=False):
@@ -92,6 +92,12 @@ def trimap(image, name, size, number, erosion=False):
 
     dilation  = cv2.dilate(image, kernel, iterations = 1)
 
+    #############################################
+    # Date: 03/03/2019                          #
+    # Check pixel value = 200,                  #
+    # should be converted to a flexible value   #
+    # Issue with test_image_8.png (195 pix val) #
+    #############################################
     dilation  = np.where(dilation == 255, 127, dilation) 	## WHITE to GRAY
     remake    = np.where(dilation != 127, 0, dilation)		## Smoothing
     remake    = np.where(image > 127, 200, dilation)		## mark the tumor inside GRAY
@@ -106,7 +112,7 @@ def trimap(image, name, size, number, erosion=False):
 
 
 if __name__ == '__main__':
-    path  = "./images/test_images/test_image_0.png";
+    path  = "./images/test_images/test_image_1.png";
 
     image = cv2.imread(path, cv2.IMREAD_GRAYSCALE);
     size = 10;
