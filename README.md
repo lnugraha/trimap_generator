@@ -29,42 +29,25 @@ On the other hand, <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha_p"
 <br /><b>Output:</b> a trimap with unknown region (gray) from tumor dilation
 <hr />
 
-<b>February 12, 2019: </b> <br/>
-
-- [X] **Error Handler** reject non-binary images (all black, all white, grayscale, and RGB); terminate the program if the erosion function annihilates the entire foreground
-- [X] **Doxypypy** Doxygen documentation
-
-<b>January 06, 2019: </b> <br/>
-
-- [X] Enable image erosion option
-- [X] Recursive function of the module that can handle multiple input images
-
 ---
 <b> TO DO: </b> <br/>
-- [ ] **Flow Chart** -- Describe how the program works
-- [ ] **Finding The Most Dominant Foreground** -- What will the program do if more than one foreground accidentally appears on the image?
-- [ ] **Unit Testing** -- Ensure that the program passes quality control
+- [ ] **Flow Chart** -- illustrate how the program works
+- [ ] **Finding The Most Dominant Foreground** -- using morphology closing and morphology opening
+- [ ] **Unit Testing**
 
----
-## Required Packages ##
-
-* cv2
-* numpy
-
----
 ## Examples ##
-
 **1 Dilating the binary image** <br/>
 ```python
 
 import cv2, os, sys
 from trimap_module import trimap
 
-name    = "./image/samples/seg_image.png";
+path    = "./image/samples/seg_image.png";
+image   = extractImage(path);
+name    = "testImage";
 size    = 10; # how many pixel extension do you want to dilate
-number  = 1;  # numbering purpose (in case more than one image are available)
-bin_img = cv2.imread(name, cv2.IMREAD_GRAYSCALE)
-trimap(bin_img, name, size, number, erosion=False)
+number  = 1;  # numbering purpose 
+trimap(image, name, size, number, erosion=False)
 ```
 |**FULL IMAGE**| **MASK IMAGE**|**FOREGROUND**| **BACKGROUND**|
 |:----------:|:----------:|:----------:|:----------:|
@@ -80,6 +63,13 @@ The illustration starts with zero erosion; followed with one, three, five, until
 <p align="center">
 <img src = "./images/examples/eroded_image.gif" height="200" width="200">
 </p><br />
+
+**3 Handling Non-Dominant Foreground (Ongoing Investigation) <br />
+|**Description**| **ORIGINAL IMAGE**|**TRIMAP RESULTS**|
+|:----------:|:----------:|:----------:|
+|**Salt-Pepper Outside FG**| ![alt text](./images/examples/opening.png)| ![alt text](./images/examples/opening_trimap.png) |
+|**Dark Speckles Inside FG**| ![alt text](./images/examples/closing.png)| ![alt text](./images/examples/closing_trimap.png) |
+
 
 ## References ##
 1. Vikas Gupta and Shanmuganathan Raman. (2017). "Automatic Trimap Generation for Image Matting". Indian Institute of Technology, Gandhinagar, IND [download](https://arxiv.org/pdf/1707.00333.pdf)
