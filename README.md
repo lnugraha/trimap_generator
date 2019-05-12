@@ -28,6 +28,7 @@ On the other hand, <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha_p"
 <br /><b>Input:</b> a binary image (from a segmented lesion)
 <br /><b>Output:</b> a trimap with unknown region (gray) from tumor dilation <br/>
 
+<br/>
 <b> TO DO: </b> <br/>
 - [ ] **Flow Chart** -- illustrate how the program works
 - [ ] **Finding The Most Dominant Foreground** -- using morphology closing and morphology opening
@@ -65,8 +66,7 @@ The illustration starts with zero erosion; followed with one, three, five, until
 **3 Handling Non-Dominant Foreground (Ongoing Investigation)** <br />
 |**Description**|**ORIGINAL IMAGE**|**TRIMAP RESULTS**|
 |:-------------:|:----------------:|:----------------:|
-|**Salt-Pepper Outside FG**|![alt text](./images/examples/opening.png)|![alt text](./images/examples/opening_trimap.png)|
-|**Dark Speckles Inside FG**|![alt text](./images/examples/closing.png)|![alt text](./images/examples/closing_trimap.png)|
+
 
 ## References ##
 1. Vikas Gupta and Shanmuganathan Raman. (2017). "Automatic Trimap Generation for Image Matting". Indian Institute of Technology, Gandhinagar, IND [download](https://arxiv.org/pdf/1707.00333.pdf)
