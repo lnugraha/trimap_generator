@@ -27,9 +27,7 @@ On the other hand, <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha_p"
 </ul>
 <br /><b>Input:</b> a binary image (from a segmented lesion)
 <br /><b>Output:</b> a trimap with unknown region (gray) from tumor dilation
-<hr />
 
----
 <b> TO DO: </b> <br/>
 - [ ] **Flow Chart** -- illustrate how the program works
 - [ ] **Finding The Most Dominant Foreground** -- using morphology closing and morphology opening
@@ -38,7 +36,6 @@ On the other hand, <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha_p"
 ## Examples ##
 **1 Dilating the binary image** <br/>
 ```python
-
 import cv2, os, sys
 from trimap_module import trimap
 
@@ -53,6 +50,7 @@ trimap(image, name, size, number, erosion=False)
 |:----------:|:----------:|:----------:|:----------:|
 |![alt text](./images/examples/full_img.png)| ![alt text](./images/examples/seg_img.png) |  ![alt text](./images/examples/fg_img.png) | ![alt text](./images/examples/bg_img.png)
 
+
 |**BINARY IMAGE**|**TRIMAP (10 PX)**|**TRIMAP (20 PX)**|**TRIMAP (30 PX)**|
 |:----------:|:----------:|:----------:|:----------:|
 |![alt text](./images/examples/seg_img.png)|![alt text](./images/examples/trimap.png)|![alt text](./images/examples/trimap_20.png)|![alt text](./images/examples/trimap_30.png)|
@@ -65,11 +63,10 @@ The illustration starts with zero erosion; followed with one, three, five, until
 </p><br />
 
 **3 Handling Non-Dominant Foreground (Ongoing Investigation) <br />
-|**Description**| **ORIGINAL IMAGE**|**TRIMAP RESULTS**|
+|**Description**|**ORIGINAL IMAGE**|**TRIMAP RESULTS**|
 |:----------:|:----------:|:----------:|
-|**Salt-Pepper Outside FG**| ![alt text](./images/examples/opening.png)| ![alt text](./images/examples/opening_trimap.png) |
-|**Dark Speckles Inside FG**| ![alt text](./images/examples/closing.png)| ![alt text](./images/examples/closing_trimap.png) |
-
+|**Salt-Pepper Outside FG**|![alt text](./images/examples/opening.png)|![alt text](./images/examples/opening_trimap.png)|
+|**Dark Speckles Inside FG**|![alt text](./images/examples/closing.png)|![alt text](./images/examples/closing_trimap.png)|
 
 ## References ##
 1. Vikas Gupta and Shanmuganathan Raman. (2017). "Automatic Trimap Generation for Image Matting". Indian Institute of Technology, Gandhinagar, IND [download](https://arxiv.org/pdf/1707.00333.pdf)
