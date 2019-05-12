@@ -58,10 +58,10 @@ trimap(image, name, size, number, erosion=False)
 
 **2 Handling Non-Dominant Foreground (Ongoing Investigation)**
 
-|**DESCRIPTION**|**ORIGINAL IMAGES**|**TRIMAP RESULTS**|
-|:----------:|:----------:|:----------:|
-|Salt-Pepper Noises Outside FG|![alt text](./images/examples/opening.png)|![alt text](./images/examples/opening_trimap.png)|
-|Dark Speckles Inside FG|![alt text](./images/examples/closing.png)|![alt text](./images/examples/closing_trimap.png)|
+|**NOISES**|**ORIGINAL IMAGES**|**TRIMAP RESULTS**|
+|:----------|:----------:|:----------:|
+|**Outside FG**|![alt text](./images/examples/opening.png)|![alt text](./images/examples/opening_trimap.png)|
+|**Inside FG**|![alt text](./images/examples/closing.png)|![alt text](./images/examples/closing_trimap.png)|
 
 **3 Impact of Eroding Foreground** <br/>
 The illustration starts with zero erosion; followed with one, three, five, until eleven iterations (an increment of two). <br />
