@@ -58,7 +58,7 @@ trimap(image, name, size, number, erosion=False)
 
 **2 Handling Non-Dominant Foreground (Ongoing Investigation)** <br />
 |**BINARY IMAGE**|**TRIMAP (10 PX)**|**TRIMAP (20 PX)**|
-|:----------:|:----------:|:----------:|
+|----------|----------|----------|
 |Salt Pepper Noise|![alt text](./images/examples/trimap.png)|![alt text](./images/examples/trimap_20.png)|
 
 **3 Impact of Eroding Foreground** <br/>
