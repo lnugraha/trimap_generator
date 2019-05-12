@@ -58,9 +58,9 @@ trimap(image, name, size, number, erosion=False)
 
 **2 Handling Non-Dominant Foreground (Ongoing Investigation)**
 
-|**BINARY IMAGE**|**TRIMAP (10 PX)**|**TRIMAP (20 PX)**|**TRIMAP (30 PX)**|
-|:----------:|:----------:|:----------:|:----------:|
-|![alt text](./images/examples/seg_img.png)|![alt text](./images/examples/trimap.png)|![alt text](./images/examples/trimap_20.png)|![alt text](./images/examples/trimap_30.png)|
+|**DESCRIPTION**|**ORIGINAL IMAGES**|**TRIMAP RESULTS**|
+|:----------:|:----------:|:----------:|
+|![alt text](./images/examples/opening.png)|![alt text](./images/examples/opening.png)|![alt text](./images/examples/opening_trimap.png)|
 
 **3 Impact of Eroding Foreground** <br/>
 The illustration starts with zero erosion; followed with one, three, five, until eleven iterations (an increment of two). <br />
