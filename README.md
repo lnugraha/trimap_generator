@@ -26,7 +26,7 @@ On the other hand, <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha_p"
   <li />Image erosion feature is added which may anticipate any overestimating foreground issue
 </ul>
 <br /><b>Input:</b> a binary image (from a segmented lesion)
-<br /><b>Output:</b> a trimap with unknown region (gray) from tumor dilation
+<br /><b>Output:</b> a trimap with unknown region (gray) from tumor dilation <br/>
 
 <b> TO DO: </b> <br/>
 - [ ] **Flow Chart** -- illustrate how the program works
@@ -62,9 +62,9 @@ The illustration starts with zero erosion; followed with one, three, five, until
 <img src = "./images/examples/eroded_image.gif" height="200" width="200">
 </p><br />
 
-**3 Handling Non-Dominant Foreground (Ongoing Investigation) <br />
+**3 Handling Non-Dominant Foreground (Ongoing Investigation)** <br />
 |**Description**|**ORIGINAL IMAGE**|**TRIMAP RESULTS**|
-|:----------:|:----------:|:----------:|
+|:-------------:|:----------------:|:----------------:|
 |**Salt-Pepper Outside FG**|![alt text](./images/examples/opening.png)|![alt text](./images/examples/opening_trimap.png)|
 |**Dark Speckles Inside FG**|![alt text](./images/examples/closing.png)|![alt text](./images/examples/closing_trimap.png)|
 
