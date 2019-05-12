@@ -2,30 +2,11 @@
 import cv2, os, sys
 import numpy as np
 
-class Toolbox:
-    def __init__(self, image):
-        self.image = image
+def extractImage(path):
+    image = cv2.imread(path, cv2.IMREAD_GRAYSCALE);
+    return image
 
-    def printImage(self): ## TO DO: another input is the extension
-        """
-        Print image into a file for checking purpose
-        unitTest = Toolbox(image);
-        unitTest.printImage(image);
-        """
-        f = open("image_results.dat", "w+")
-        for i in range(0, self.image.shape[0]):
-            for j in range(0, self.image.shape[1]):
-                f.write("%d " %self.image[i,j])
-            f.write("\n")
-        f.close()
-
-    def displayImage(self):
-        cv2.imshow('The Displayed Image', self.image);
-        cv2.waitKey(0);
-        cv2.destroyAllWindows();
-
-
-def check_image(image):
+def checkImage(image):
     """
     Args:
         image: input image to be checked
@@ -57,6 +38,46 @@ def check_image(image):
         return True
 
 
+
+
+class Toolbox:
+    def __init__(self, image):
+        self.image = image;
+
+    def printImage(self):
+        """
+        Print image into a file for checking purpose
+        unitTest = Toolbox(image);
+        unitTest.printImage(image);
+        """
+        
+        f = open("image_results.dat", "w+")
+        for i in range(0, self.image.shape[0]):
+            for j in range(0, self.image.shape[1]):
+                f.write("%d " %self.image[i,j])
+            f.write("\n")
+        f.close()
+
+    def displayImage(self):
+        cv2.imshow('Displayed Image', self.image);
+        cv2.waitKey(0);
+        cv2.destroyAllWindows(); 
+
+    def opening(self, image):
+        # FIXME: to be completed
+        # Effective when dealing with salt pepper noise
+        kernel = np.ones( (5,5), np.uint8 )
+        cv2.morphologyEx(self.image, cv2.MORPH_OPEN, kernel)
+        return image
+
+    def closing(self, image):
+        # FIXME: to be completed
+        # Effective when dealing with noises inside foreground
+        kernel = np.ones( (5,5), np.uint8 )
+        cv2.morphologyEx(self.image, cv2.MORPH_CLOSE, kernel)
+        return image
+
+
 def trimap(image, name, size, number, erosion=False):
     """
     This function creates a trimap based on simple dilation algorithm
@@ -64,7 +85,7 @@ def trimap(image, name, size, number, erosion=False):
                 the last argument is optional; i.e., how many iterations will the image get eroded
     Output    : a trimap
     """
-    check_image(image);
+    checkImage(image);
     
     row    = image.shape[0];
     col    = image.shape[1];
@@ -111,15 +132,17 @@ def trimap(image, name, size, number, erosion=False):
 #############################################
 if __name__ == '__main__':
 
-    path  = "./images/test_images/test_image_11.png";
-    image = cv2.imread(path, cv2.IMREAD_GRAYSCALE);
+    path  = "./images/test_images/test_image_12.png";
+    image = extractImage(path)
+
     size = 10;
     number = path[-5];
     title = "test_image"
 
     trimap(image, title, size, number, erosion=False);
 
-    # Testing Methods from the Toolbox Class
-    #unit01 = Toolbox(image);
-    #unit01.printImage();
-    #unit01.displayImage();
+
+    ### Testing Methods from the Toolbox Class
+    ### unit01 = Toolbox(image);
+    ### unit01.displayImage();
+
