@@ -65,7 +65,7 @@ The illustration starts with zero erosion; followed with one, three, five, until
 
 **3 Handling Non-Dominant Foreground (Ongoing Investigation)**
 |**BINARY IMAGE**|**TRIMAP (10 PX)**|**TRIMAP (20 PX)**|
-|:----------:|:----------:|:----------:|:----------:|
+|:----------:|:----------:|:----------:|
 |![alt text](./images/examples/seg_img.png)|![alt text](./images/examples/trimap.png)|![alt text](./images/examples/trimap_20.png)|
 
 
