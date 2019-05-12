@@ -28,7 +28,7 @@ On the other hand, <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha_p"
 <br /><b>Input:</b> a binary image (from a segmented lesion)
 <br /><b>Output:</b> a trimap with unknown region (gray) from tumor dilation <br/>
 
-
+---
 **TO DO:**
 - [ ] **Flow Chart** -- illustrate how the program works
 - [ ] **Finding The Most Dominant Foreground** -- using morphology closing and morphology opening
@@ -64,8 +64,9 @@ The illustration starts with zero erosion; followed with one, three, five, until
 </p><br />
 
 **3 Handling Non-Dominant Foreground (Ongoing Investigation)**
-|**Description**|**ORIGINAL IMAGE**|**TRIMAP RESULTS**|
-|:-------------:|:----------------:|:----------------:|
+|**BINARY IMAGE**|**TRIMAP (10 PX)**|**TRIMAP (20 PX)**|
+|:----------:|:----------:|:----------:|:----------:|
+|![alt text](./images/examples/seg_img.png)|![alt text](./images/examples/trimap.png)|![alt text](./images/examples/trimap_20.png)|
 
 
 ## References ##
