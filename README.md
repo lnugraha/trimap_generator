@@ -56,17 +56,17 @@ trimap(image, name, size, number, erosion=False)
 |:----------:|:----------:|:----------:|:----------:|
 |![alt text](./images/examples/seg_img.png)|![alt text](./images/examples/trimap.png)|![alt text](./images/examples/trimap_20.png)|![alt text](./images/examples/trimap_30.png)|
 
-**2 Impact of Eroding Foreground** <br/>
+**2 Handling Non-Dominant Foreground (Ongoing Investigation)**
+|**BINARY IMAGE**|**TRIMAP (10 PX)**|**TRIMAP (20 PX)**|
+|:----------:|:----------:|:----------:|
+|Salt Pepper Noise|![alt text](./images/examples/trimap.png)|![alt text](./images/examples/trimap_20.png)|
+
+**3 Impact of Eroding Foreground** <br/>
 The illustration starts with zero erosion; followed with one, three, five, until eleven iterations (an increment of two). <br />
 
 <p align="center">
 <img src = "./images/examples/eroded_image.gif" height="200" width="200">
 </p><br />
-
-**3 Handling Non-Dominant Foreground (Ongoing Investigation)**
-|**BINARY IMAGE**|**TRIMAP (10 PX)**|**TRIMAP (20 PX)**|
-|:----------:|:----------:|:----------:|
-|![alt text](./images/examples/seg_img.png)|![alt text](./images/examples/trimap.png)|![alt text](./images/examples/trimap_20.png)|
 
 
 ## References ##
