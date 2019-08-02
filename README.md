@@ -32,8 +32,9 @@ On the other hand, <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha_p"
 **TO DO:**
 - [ ] **Contour Detection Module** -- an alternative method to circumscribe foreground without U-Net segmentation
 - [ ] **Flow Chart** -- illustrate how the program works
+- [ ] **OOP Class Design** -- create a more intuitive way to bundle methods and attributes
 - [ ] **Unit Testing**
-- [X] **Finding The Most Dominant Foreground** -- using morphology closing and morphology opening
+- [ ] **Finding The Most Dominant Foreground** -- automatic kernel design (generate an odd-sized matrix from an integer)
 
 ## Examples ##
 **1 Dilating the binary image** <br/>
@@ -58,7 +59,16 @@ trimap(image, name, size, number, erosion=False)
 |![alt text](./images/examples/seg_img.png)|![alt text](./images/examples/trimap.png)|![alt text](./images/examples/trimap_20.png)|![alt text](./images/examples/trimap_30.png)|
 
 **2 Handling Non-Dominant Foreground**
+```python
+import cv2, os, sys
+from trimap_module import trimap
+path    = "./image/test_images/test_image_10.png";
+image   = extractImage(path);
 
+kernel  = np.ones( (9,9), np.uint8 ); 
+opening = unit01.morph_close(image,kernel);
+trimap(opening, "trimap_result", 10, 1, erosion=False)
+```
 |**NOISES**|**ORIGINAL IMAGES**|**TRIMAPS PREVIOUS**|**TRIMAPS NEW**|
 |:----------|:----------:|:----------:|:----------:|
 |**Outside FG**|![alt text](./images/examples/opening.png)|![alt text](./images/examples/opening_trimap.png)|![alt text](./images/examples/opening_trimap_new.png)|
