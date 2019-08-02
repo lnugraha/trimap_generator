@@ -30,9 +30,10 @@ On the other hand, <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha_p"
 
 ---
 **TO DO:**
+- [ ] **Contour Detection Module** -- an alternative method to circumscribe foreground without U-Net segmentation
 - [ ] **Flow Chart** -- illustrate how the program works
-- [ ] **Finding The Most Dominant Foreground** -- using morphology closing and morphology opening
 - [ ] **Unit Testing**
+- [X] **Finding The Most Dominant Foreground** -- using morphology closing and morphology opening
 
 ## Examples ##
 **1 Dilating the binary image** <br/>
@@ -56,12 +57,12 @@ trimap(image, name, size, number, erosion=False)
 |:----------:|:----------:|:----------:|:----------:|
 |![alt text](./images/examples/seg_img.png)|![alt text](./images/examples/trimap.png)|![alt text](./images/examples/trimap_20.png)|![alt text](./images/examples/trimap_30.png)|
 
-**2 Handling Non-Dominant Foreground (Ongoing Investigation)**
+**2 Handling Non-Dominant Foreground**
 
-|**NOISES**|**ORIGINAL IMAGES**|**TRIMAP RESULTS**|
-|:----------|:----------:|:----------:|
-|**Outside FG**|![alt text](./images/examples/opening.png)|![alt text](./images/examples/opening_trimap.png)|
-|**Inside FG**|![alt text](./images/examples/closing.png)|![alt text](./images/examples/closing_trimap.png)|
+|**NOISES**|**ORIGINAL IMAGES**|**TRIMAPS PREVIOUS**|**TRIMAPS NEW**|
+|:----------|:----------:|:----------:|:----------:|
+|**Outside FG**|![alt text](./images/examples/opening.png)|![alt text](./images/examples/opening_trimap.png)|![alt text](./images/examples/opening_trimap_new.png)|
+|**Inside FG**|![alt text](./images/examples/closing.png)|![alt text](./images/examples/closing_trimap.png)|![alt text](./images/examples/closing_trimap_new.png)|
 
 **3 Impact of Eroding Foreground** <br/>
 The illustration starts with zero erosion; followed with one, three, five, until eleven iterations (an increment of two). <br />
@@ -69,7 +70,6 @@ The illustration starts with zero erosion; followed with one, three, five, until
 <p align="center">
 <img src = "./images/examples/eroded_image.gif" height="200" width="200">
 </p><br />
-
 
 ## References ##
 1. Vikas Gupta and Shanmuganathan Raman. (2017). "Automatic Trimap Generation for Image Matting". Indian Institute of Technology, Gandhinagar, IND [download](https://arxiv.org/pdf/1707.00333.pdf)
