@@ -11,10 +11,8 @@ def checkImage(image):
     """
     Args:
         image: input image to be checked
-
     Returns:
         binary image
-
     Raises:
         RGB image, grayscale image, all-black, and all-white image
 
@@ -48,38 +46,51 @@ class Toolbox:
         unitTest = Toolbox(image);
         unitTest.printImage(image);
         """
-        
         f = open("image_results.dat", "w+")
         for i in range(0, self.image.shape[0]):
             for j in range(0, self.image.shape[1]):
                 f.write("%d " %self.image[i,j])
             f.write("\n")
         f.close()
-
-    def saveImage(self):
-        """
-        Save the image as a bmp file
-        """
         
-
     def displayImage(self):
+        """
+        Display the image on a window
+        Press any key to exit
+        """
         cv2.imshow('Displayed Image', self.image);
         cv2.waitKey(0);
         cv2.destroyAllWindows(); 
 
-    def opening(self, image):
-        # FIXME: to be completed
-        # Effective when dealing with salt pepper noise
-        kernel = np.ones( (5,5), np.uint8 )
-        cv2.morphologyEx(self.image, cv2.MORPH_OPEN, kernel)
-        return image
+    def saveImage(self, title, extension):
+        """
+        Save as a specific image format (bmp, png, or jpeg)
+        """
+        cv2.imwrite("{}.{}".format(title,extension), self.image);        
 
-    def closing(self, image):
-        # FIXME: to be completed
-        # Effective when dealing with noises inside foreground
-        kernel = np.ones( (5,5), np.uint8 )
-        cv2.morphologyEx(self.image, cv2.MORPH_CLOSE, kernel)
-        return image
+    def morph_open(self, image, kernel):
+        """
+        Remove all white noises or speckles outside images
+        Need to tune the kernel size
+        Instruction:
+        unit01 = Toolbox(image);
+        kernel = np.ones( (9,9), np.uint8 );
+        morph  = unit01.morph_open(input_image, kernel);
+        """
+        bin_open = cv2.morphologyEx(self.image, cv2.MORPH_OPEN, kernel)
+        return bin_open
+
+    def morph_close(self, image, kernel):
+        """
+        Remove all black noises or speckles inside images
+        Need to tune the kernel size
+        Instruction:
+        unit01 = Toolbox(image);
+        kernel = np.ones( (11,11)_, np.uint8 );
+        morph  = unit01.morph_close(input_image, kernel);
+        """        
+        bin_close = cv2.morphologyEx(self.image, cv2.MORPH_CLOSE, kernel)
+        return bin_close
 
 
 def trimap(image, name, size, number, erosion=False):
@@ -99,9 +110,9 @@ def trimap(image, name, size, number, erosion=False):
 
     if erosion is not False:
         erosion = int(erosion)
-        erosion_kernel = np.ones((3,3), np.uint8)                 ## Design an odd-sized erosion kernel
+        erosion_kernel = np.ones((3,3), np.uint8)                     ## Design an odd-sized erosion kernel
         image = cv2.erode(image, erosion_kernel, iterations=erosion)  ## How many erosion do you expect
-        image = np.where(image > 0, 255, image)                         ## Any gray-clored pixel becomes white (smoothing)
+        image = np.where(image > 0, 255, image)                       ## Any gray-clored pixel becomes white (smoothing)
         # Error-handler to prevent entire foreground annihilation
         if cv2.countNonZero(image) == 0:
             print("ERROR: foreground has been entirely eroded");
@@ -136,15 +147,21 @@ def trimap(image, name, size, number, erosion=False):
 #############################################
 if __name__ == '__main__':
 
-    path  = "./images/test_images/test_image_12.png";
+    path  = "./images/test_images/test_image_11.png";
     image = extractImage(path)
 
     size = 10;
     number = path[-5];
     title = "test_image"
 
-    trimap(image, title, size, number, erosion=False);
+    unit01  = Toolbox(image);
+    kernel1 = np.ones( (11,11), np.uint8 );
+    opening = unit01.morph_close(image,kernel1);
+    trimap(opening, title, size, number, erosion=False);
+    unit02  = Toolbox(opening);
+    unit02.displayImage();
 
-    ### Testing Methods from the Toolbox Class
-    ### unit01 = Toolbox(image);
-    ### unit01.displayImage();
+    ########################################################
+    ## Default instruction (no binary opening or closing  ##
+    ## trimap(image, title, size, number, erosion=False); ##
+    ########################################################
