@@ -3,6 +3,7 @@ import cv2, os, sys
 import numpy as np
 
 def extractImage(path):
+    # error handller if the intended path is not found
     image = cv2.imread(path, cv2.IMREAD_GRAYSCALE);
     return image
 
@@ -37,9 +38,6 @@ def checkImage(image):
     else:
         return True
 
-
-
-
 class Toolbox:
     def __init__(self, image):
         self.image = image;
@@ -57,6 +55,12 @@ class Toolbox:
                 f.write("%d " %self.image[i,j])
             f.write("\n")
         f.close()
+
+    def saveImage(self):
+        """
+        Save the image as a bmp file
+        """
+        
 
     def displayImage(self):
         cv2.imshow('Displayed Image', self.image);
@@ -141,8 +145,6 @@ if __name__ == '__main__':
 
     trimap(image, title, size, number, erosion=False);
 
-
     ### Testing Methods from the Toolbox Class
     ### unit01 = Toolbox(image);
     ### unit01.displayImage();
-
