@@ -32,7 +32,9 @@ On the other hand, <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha_p"
 **TO DO:**
 - [ ] **OOP Class Design** -- create an abstract base class (ABC) that allows either foreground erosion or dilation prior to trimap generaition
 - [ ] **Finding The Most Dominant Foreground** -- automatic kernel design (generate an odd-sized matrix from an integer)
+- [ ] **Performance Optimization** -- for-loop optimization to accomodate large-sized images
 - [ ] **Contour Detection Module** -- an alternative method to circumscribe foreground without U-Net segmentation
+- [ ] **Unit Testing & Doxygen Documentation**
 
 ## Examples ##
 **1 Dilating the binary image** <br/>
