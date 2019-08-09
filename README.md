@@ -30,11 +30,9 @@ On the other hand, <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha_p"
 
 ---
 **TO DO:**
-- [ ] **Contour Detection Module** -- an alternative method to circumscribe foreground without U-Net segmentation
-- [ ] **Flow Chart** -- illustrate how the program works
-- [ ] **OOP Class Design** -- create a more intuitive way to bundle methods and attributes
-- [ ] **Unit Testing**
+- [ ] **OOP Class Design** -- create an abstract base class (ABC) that allows either foreground erosion or dilation prior to trimap generaition
 - [ ] **Finding The Most Dominant Foreground** -- automatic kernel design (generate an odd-sized matrix from an integer)
+- [ ] **Contour Detection Module** -- an alternative method to circumscribe foreground without U-Net segmentation
 
 ## Examples ##
 **1 Dilating the binary image** <br/>
@@ -84,3 +82,4 @@ The illustration starts with zero erosion; followed with one, three, five, until
 ## References ##
 1. Vikas Gupta and Shanmuganathan Raman. (2017). "Automatic Trimap Generation for Image Matting". Indian Institute of Technology, Gandhinagar, IND [download](https://arxiv.org/pdf/1707.00333.pdf)
 2. Olivier Juan and Reanud Keriven. (2005). "Trimap Segmentation for Fast and User-Friendly Alpha Matting". FRA [download](http://imagine.enpc.fr/publications/papers/05vlsm_c.pdf)
+3. Jimei Yang, Brian Price, Scott Cohen, Honglak Lee, and Ming-Hsuan Yang. (2016). "Object Contour Detection with a Fully Convolutional Encoder-Decoder Network". Adobe Research, USA [download](https://arxiv.org/pdf/1603.04530.pdf)
