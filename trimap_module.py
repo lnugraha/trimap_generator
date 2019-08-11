@@ -40,6 +40,7 @@ class Toolbox:
     def __init__(self, image):
         self.image = image;
 
+    @property
     def printImage(self):
         """
         Print image into a file for checking purpose
@@ -53,6 +54,7 @@ class Toolbox:
             f.write("\n")
         f.close()
         
+    @property
     def displayImage(self):
         """
         Display the image on a window
@@ -156,10 +158,12 @@ if __name__ == '__main__':
 
     unit01  = Toolbox(image);
     kernel1 = np.ones( (11,11), np.uint8 );
+    unit01.displayImage;
+    
     opening = unit01.morph_close(image,kernel1);
     trimap(opening, title, size, number, erosion=False);
     unit02  = Toolbox(opening);
-    unit02.displayImage();
+    unit02.displayImage;
 
     ########################################################
     ## Default instruction (no binary opening or closing  ##
