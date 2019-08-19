@@ -144,7 +144,7 @@ class Dilation(FGScale):
             sys.exit();
         return image;
 
-def trimap(image, name, size, number, FGScale=None, iteration=0):
+def trimap(image, name, size, number, FGScale=None, num_iter=0):
     """
     This function creates a trimap based on simple dilation algorithm
     Inputs [4]: a binary image (black & white only), name of the image, dilation pixels
@@ -163,10 +163,13 @@ def trimap(image, name, size, number, FGScale=None, iteration=0):
         pass
     elif (FGScale == Dilation):
         expand = Dilation(image);
-        image  = expand.scaling(image, iteration);
+        image  = expand.scaling(image, num_iter);
     elif (FGScale == Erosion):
         shrink = Erosion(image);
-        image  = shrink.scaling(image, iteration);
+        image  = shrink.scaling(image, num_iter);
+    else:
+        printf("ERROR: Unspecified foreground dilation or erosion method");
+        sys.exit();
     
     dilation  = cv2.dilate(image, kernel, iterations = 1)
 
@@ -204,4 +207,4 @@ if __name__ == '__main__':
     number = path[-5];
     title = "test_image"
     
-    trimap(image, title, size, number, FGScale=Erosion, iteration=7);
+    trimap(image, title, size, number, FGScale=Dilation, num_iter=7);
