@@ -30,14 +30,13 @@ On the other hand, <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha_p"
 
 ---
 **TO DO:**
-- [ ] **OOP Class Design** -- create an abstract base class (ABC) that allows either foreground erosion or dilation prior to trimap generaition
+- [X] **OOP Class Design** -- create an abstract base class (ABC) that allows either foreground erosion or dilation prior to trimap generaition
 - [ ] **Finding The Most Dominant Foreground** -- automatic kernel design (generate an odd-sized matrix from an integer)
 - [ ] **Performance Optimization** -- for-loop optimization to accomodate large-sized images
 - [ ] **Contour Detection Module** -- an alternative method to circumscribe foreground without U-Net segmentation
-- [ ] **Unit Testing & Doxygen Documentation**
 
 ## Examples ##
-**1 Dilating the binary image** <br/>
+**1 Dilating the binary image (trimap_module.py)** <br/>
 ```python
 import cv2, os, sys
 from trimap_module import trimap
@@ -58,7 +57,7 @@ trimap(image, name, size, number, erosion=False)
 |:----------:|:----------:|:----------:|:----------:|
 |![alt text](./images/examples/seg_img.png)|![alt text](./images/examples/trimap.png)|![alt text](./images/examples/trimap_20.png)|![alt text](./images/examples/trimap_30.png)|
 
-**2 Handling Non-Dominant Foreground**
+**2 Handling Non-Dominant Foreground (trimap_module.py)**
 ```python
 import cv2, os, sys
 from trimap_module import trimap
@@ -74,11 +73,27 @@ trimap(opening, "trimap_result", 10, 1, erosion=False)
 |**Outside FG**|![alt text](./images/examples/opening.png)|![alt text](./images/examples/opening_trimap.png)|![alt text](./images/examples/opening_trimap_new.png)|
 |**Inside FG**|![alt text](./images/examples/closing.png)|![alt text](./images/examples/closing_trimap.png)|![alt text](./images/examples/closing_trimap_new.png)|
 
-**3 Impact of Eroding Foreground** <br/>
-The illustration starts with zero erosion; followed with one, three, five, until eleven iterations (an increment of two). <br />
+**3 Impact of Eroding or Expanding Foreground (trimap_class.py)** <br/>
+```python
+import cv2, os, sys
+from trimap_class import trimap
+path    = "./image/test_images/test_image_12.png";
+image   = extractImage(path);
+    
+trimap(image, ""trimap_result, 10, 1, FGScale=Erosion, iteration=3);
+```
+The illustration starts with zero erosion/dilation; followed with one, three, five, until eleven iterations (an increment of two). <br />
 
 <p align="center">
-<img src = "./images/examples/eroded_image.gif" height="200" width="200">
+<table>  
+  <tr>
+  <th> Erosion </th> <th> Expansion </th>
+  </tr>
+  <tr>
+  <td> <img src = "./images/examples/erosion_effect.gif" height="200" width="200"> </td>
+  <td> <img src = "./images/examples/dilation_effect.gif" height="200" width="200"> </td>
+  </tr>
+</table>
 </p><br />
 
 ## References ##
