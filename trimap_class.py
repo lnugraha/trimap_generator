@@ -96,8 +96,9 @@ class Toolbox:
         bin_close = cv2.morphologyEx(self.image, cv2.MORPH_CLOSE, kernel)
         return bin_close
 
-class FGScale(ABC):
+class DEFG(ABC):
     """
+    DEFG: Dilation or Erosion of Fore Ground
     An abstract base class that enables image erosion or dilation PRE trimap
     Attribute: binary image
     Method: scaling with two inputs: image and iterations
@@ -109,7 +110,7 @@ class FGScale(ABC):
     def scaling(self, image, iteration):
         pass
 
-class Erosion(FGScale):
+class Erosion(DEFG):
     def __init__(self, image):
         self.image = image
 
@@ -124,7 +125,7 @@ class Erosion(FGScale):
             sys.exit();
         return image;
 
-class Dilation(FGScale):
+class Dilation(DEFG):
     def __init__(self, image):
         self.image = image
 
@@ -144,7 +145,7 @@ class Dilation(FGScale):
             sys.exit();
         return image;
 
-def trimap(image, name, size, number, FGScale=None, num_iter=0):
+def trimap(image, name, size, number, DEFG=None, num_iter=0):
     """
     This function creates a trimap based on simple dilation algorithm
     Inputs [4]: a binary image (black & white only), name of the image, dilation pixels
@@ -159,12 +160,12 @@ def trimap(image, name, size, number, FGScale=None, num_iter=0):
     pixels = 2*size + 1;                                     ## Double and plus 1 to have an odd-sized kernel
     kernel = np.ones((pixels,pixels),np.uint8)               ## How many pixel of extension do I get
 
-    if FGScale==None:
+    if DEFG==None:
         pass
-    elif (FGScale == Dilation):
+    elif (DEFG == Dilation):
         expand = Dilation(image);
         image  = expand.scaling(image, num_iter);
-    elif (FGScale == Erosion):
+    elif (DEFG == Erosion):
         shrink = Erosion(image);
         image  = shrink.scaling(image, num_iter);
     else:
@@ -207,4 +208,4 @@ if __name__ == '__main__':
     number = path[-5];
     title = "test_image"
     
-    trimap(image, title, size, number, FGScale=Dilation, num_iter=7);
+    trimap(image, title, size, number, DEFG=None);
