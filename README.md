@@ -84,8 +84,8 @@ trimap(image, ""trimap_result, 10, 1, DEFG=Erosion, num_iter=3);
 ```
 The illustration starts with zero erosion/dilation; followed with one, three, five, until eleven iterations (an increment of two). <br />
 
-<p align="center">
-<table style="border:1px solid black;margin-left:auto;margin-right:auto;">  
+<p>
+<table style="margin-left:auto;margin-right:auto;">  
   <tr>
   <th> Erosion </th> <th> Expansion </th>
   </tr>
