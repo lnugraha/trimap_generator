@@ -28,6 +28,9 @@ On the other hand, <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha_p"
 <br /><b>Input:</b> a binary image (from a segmented lesion)
 <br /><b>Output:</b> a trimap with unknown region (gray) from tumor dilation <br/>
 
+## Flow Chart ##
+<img src = "./assets/flowcharts/trimap_flowchart_small.png>
+
 ---
 **TO DO:**
 - [X] **OOP Class Design** -- create an abstract base class (ABC) that allows either foreground erosion or dilation prior to trimap generaition
