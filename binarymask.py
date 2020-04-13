@@ -43,3 +43,13 @@ if __name__ == "__main__":
 
     point_01 = pnpoly(Polygon, [12.0, 15.0])
     print(point_01)
+
+    test_poly = "./assets/polygons/raw_mask_30.txt"
+    test = np.loadtxt(test_poly);
+    
+    ROI_xy = [];
+    for i in range( int( test.size/3 ) ):
+        idx = 3*i; idy = 3*i+1; idz = 3*i+2;
+
+    # plt.scatter(ROI_x, ROI_y, s=2, color='green')
+    # plt.show()
