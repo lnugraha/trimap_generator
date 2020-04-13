@@ -30,7 +30,6 @@ On the other hand, <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha_p"
 
 ## Flow Chart ##
 <p align="center"> <img src = "./assets/flowcharts/trimap_flowchart_small.png"> </p>
-<br/>
 
 ---
 **TO DO:**
