@@ -1,5 +1,6 @@
 import numpy as np
 import sys, os
+import matplotlib.pyplot as plt
 from matplotlib.path import Path
 
 def pnpoly(Polygon, vertex):
@@ -47,9 +48,14 @@ if __name__ == "__main__":
     test_poly = "./assets/polygons/raw_mask_30.txt"
     test = np.loadtxt(test_poly);
     
-    ROI_xy = [];
+    ROI_x = []; ROI_y = []; ROI_z = []; ROI_xy = [];
     for i in range( int( test.size/3 ) ):
-        idx = 3*i; idy = 3*i+1; idz = 3*i+2;
+        ROI_x.append( test[i][0] )
+        ROI_y.append( test[i][1] )
+        ROI_z.append( test[i][2] )
 
-    # plt.scatter(ROI_x, ROI_y, s=2, color='green')
-    # plt.show()
+        ROI_xy.append([test[i][0], test[i][1]])
+        
+
+    plt.scatter(ROI_x, ROI_y, s=2, color='green')
+    plt.show()
