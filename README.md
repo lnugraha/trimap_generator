@@ -29,9 +29,8 @@ On the other hand, <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha_p"
 <br /><b>Output:</b> a trimap with unknown region (gray) from tumor dilation <br/>
 
 ## Flow Chart ##
-<p align="center">
-<img src = "./assets/flowcharts/trimap_flowchart_small.png>
-</p>
+<p align="center"> <img src = "./assets/flowcharts/trimap_flowchart_small.png"> </p>
+<br/>
 
 ---
 **TO DO:**
