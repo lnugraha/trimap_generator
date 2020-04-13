@@ -29,13 +29,20 @@ def pnpoly(Polygon, vertex):
 
 def binary_mask(Polygon, AllPixels, savePNG=False, saveTXT=False):
     """
+    TODO: Fix this part 
     Description: Generate a binary mask based on a given 2-D contour polygon
     Polygon: The polygon containing contour points
     AllPixels: The generated binary mask
     savePNG: save the generated mask as a .png file
     saveTXT: save the generated mask as a .txt file
     """
-    pass
+    final = [];
+    for i in range (512*512):
+        c = pnpoly(Polygon, AllPixels[i])
+        final.append(c)
+
+    # plt.imshow(final)
+    # plt.show()
 
 if __name__ == "__main__":
     Polygon = [[0.0, 0.0], [10.0, 0.0], [10.0, 10.0], [0.0, 10.0]]
@@ -55,7 +62,12 @@ if __name__ == "__main__":
         ROI_z.append( test[i][2] )
 
         ROI_xy.append([test[i][0], test[i][1]])
-        
 
-    plt.scatter(ROI_x, ROI_y, s=2, color='green')
-    plt.show()
+    # FIXME
+    RawVoxels= [];
+    for i in range(512*512):
+        RawVoxels.append( [-275+i*1.074219 , -275+i*1.074219 ]  )
+
+    binary_mask(ROI_xy, RawVoxels);
+    # plt.scatter(ROI_x, ROI_y, s=2, color='green')
+    # plt.show()
