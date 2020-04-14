@@ -1,4 +1,6 @@
 import numpy as np
+import cv2
+import math
 import sys, os
 import matplotlib.pyplot as plt
 from matplotlib.path import Path
@@ -36,22 +38,30 @@ def binary_mask(Polygon, AllPixels, savePNG=False, saveTXT=False):
     savePNG: save the generated mask as a .png file
     saveTXT: save the generated mask as a .txt file
     """
-    final = [];
-    for i in range (512*512):
-        c = pnpoly(Polygon, AllPixels[i])
-        final.append(c)
+    rows = int( math.sqrt(len(AllPixels)) )
+    cols = int( math.sqrt(len(AllPixels)) )
+    final = np.zeros(rows*cols);
 
-    # plt.imshow(final)
-    # plt.show()
+    for i in range(rows):
+        for j in range(cols):
+            final[i*cols+j] = pnpoly(Polygon, AllPixels[i*cols+j])
+
+    return final
 
 if __name__ == "__main__":
-    Polygon = [[0.0, 0.0], [10.0, 0.0], [10.0, 10.0], [0.0, 10.0]]
-    point_00 = pnpoly(Polygon, [2.0, 2.0])
-    print(point_00)
+    Polygon = [[0.0, 0.0], [5.0, 0.0], [5.0, 5.0], [0.0, 5.0]]
+    # point_00 = pnpoly(Polygon, [2.0, 2.0])
+    # point_01 = pnpoly(Polygon, [12.0, 15.0])
+    TestPixels = [];
+    for i in range(10):
+        for j in range(10):
+            TestPixels.append( [i,j] )
 
-    point_01 = pnpoly(Polygon, [12.0, 15.0])
-    print(point_01)
-
+    results = binary_mask(Polygon, TestPixels)
+    # cv2.imshow('img', results)
+    # cv2.waitKey(0)
+    # cv2.destroyAllWindows()
+    
     test_poly = "./assets/polygons/raw_mask_30.txt"
     test = np.loadtxt(test_poly);
     
@@ -60,14 +70,13 @@ if __name__ == "__main__":
         ROI_x.append( test[i][0] )
         ROI_y.append( test[i][1] )
         ROI_z.append( test[i][2] )
-
         ROI_xy.append([test[i][0], test[i][1]])
 
     # FIXME
-    RawVoxels= [];
-    for i in range(512*512):
-        RawVoxels.append( [-275+i*1.074219 , -275+i*1.074219 ]  )
-
-    binary_mask(ROI_xy, RawVoxels);
-    # plt.scatter(ROI_x, ROI_y, s=2, color='green')
+    # RawVoxels= [];
+    # for i in range(512):
+    #    for j in range (512):
+    #        RawVoxels.append( [-275+i*1.074219 , -275+j*1.074219 ]  )
+    # check_results = binary_mask(ROI_xy, RawVoxels);
+    # plt.scatter(ROI_x, ROI_y, s=2, color='black')
     # plt.show()
