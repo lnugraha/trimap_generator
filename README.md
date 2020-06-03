@@ -98,6 +98,10 @@ The illustration starts with zero erosion/dilation; followed with one, three, fi
 </table>
 </p><br />
 
+
+**4 Image Processing using Feature Extraction Module (feature_extraction.py)** <br/>
+**Coming Soon**
+
 ## References ##
 1. Vikas Gupta and Shanmuganathan Raman. (2017). "Automatic Trimap Generation for Image Matting". Indian Institute of Technology, Gandhinagar, IND [download](https://arxiv.org/pdf/1707.00333.pdf)
 2. Olivier Juan and Reanud Keriven. (2005). "Trimap Segmentation for Fast and User-Friendly Alpha Matting". FRA [download](http://imagine.enpc.fr/publications/papers/05vlsm_c.pdf)
