@@ -173,7 +173,7 @@ def trimap(image, name, size, number, DEFG=None, num_iter=0):
         shrink = Erosion(image)
         image  = shrink.scaling(image, num_iter)
     else:
-        printf("ERROR: Unspecified foreground dilation or erosion method")
+        print("ERROR: Unspecified foreground dilation or erosion method")
         sys.exit()
     
     dilation  = cv2.dilate(image, kernel, iterations = 1)
