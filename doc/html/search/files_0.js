@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['trimap_5fmodule_2epy',['trimap_module.py',['../trimap__module_8py.html',1,'']]]
+  ['trimap_5fclass_2epy_0',['trimap_class.py',['../trimap__class_8py.html',1,'']]]
 ];

@@ -37,6 +37,20 @@ On the other hand, <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha_p"
 - [ ] **Contour Detection Module** -- an alternative method to circumscribe foreground without U-Net segmentation
 - [ ] **Mask Contour Module** -- create a binary mask from contour point polygon
 
+**UPDATES (October 2021):**
+1. File management:
+- [x] Merge develop to main branch
+- [x] Move trimap_module.py to archive/ and move trimap_class.py to src/
+- [ ] Inside DEFG module (trimap_class.py), enable integer argument (0=None,1=Erosion, and 2=Dilation)
+
+2. Documentation:
+- [ ] Update trimap_tutorial.ipynb
+- [x] Created a documentation using Doxygen
+
+3. Testing and automation:
+- [ ] Automate testing using GitHub Action using all cases provided in test/
+- [ ] Use Docker virtualization and fill in all required dependencies in requirements.txt
+
 ## Examples ##
 **1 Dilating the binary image (trimap_module.py)** <br/>
 ```python

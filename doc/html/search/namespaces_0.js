@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['trimap_5fmodule',['trimap_module',['../namespacetrimap__module.html',1,'']]]
+  ['trimap_5fclass_0',['trimap_class',['../namespacetrimap__class.html',1,'']]]
 ];
