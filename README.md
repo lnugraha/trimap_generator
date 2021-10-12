@@ -41,15 +41,17 @@ On the other hand, <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha_p"
 1. File management:
 - [x] Merge develop to main branch
 - [x] Move trimap_module.py to archive/ and move trimap_class.py to src/
-- [ ] Inside DEFG module (trimap_class.py), enable integer argument (0=None,1=Erosion, and 2=Dilation)
+- [x] Inside DEFG module (trimap_class.py), enable integer argument (0=None,1=Dilation, and 2=Erosion)
 
 2. Documentation:
-- [ ] Update trimap_tutorial.ipynb
+- [ ] Update and refresh trimap_tutorial.ipynb
 - [x] Created a documentation using Doxygen
+- [ ] Revise directory management (possibly by enabling args and kwargs) inside trimap_class.py for a more systematic file management
 
 3. Testing and automation:
 - [ ] Automate testing using GitHub Action using all cases provided in test/
-- [ ] Use Docker virtualization and fill in all required dependencies in requirements.txt
+- [ ] Use Docker virtualization 
+- [x] Fill in all required dependencies in requirements.txt
 
 ## Examples ##
 **1 Dilating the binary image (trimap_module.py)** <br/>
@@ -95,8 +97,11 @@ import cv2, os, sys
 from trimap_class import trimap
 path    = "./image/test_images/test_image_12.png";
 image   = extractImage(path);
-    
-trimap(image, ""trimap_result, 10, 1, DEFG=Erosion, num_iter=3);
+result  = "trimap_result_"
+
+trimap(image, result, 10, 1, DEFG=Erosion, num_iter=3);
+# Alternative expression
+# trimap(image, result, 10, 1, DEFG=2, num_iter=3)
 ```
 The illustration starts with zero erosion/dilation; followed with one, three, five, until eleven iterations (an increment of two). <br />
 

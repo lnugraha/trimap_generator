@@ -164,12 +164,12 @@ def trimap(image, name, size, number, DEFG=None, num_iter=0):
     col    = image.shape[1]
     pixels = 2*size + 1 ## Double and plus 1 to have an odd-sized kernel
     kernel = np.ones((pixels,pixels),np.uint8) ## How many pixel extension do I get
-    if DEFG==None:
+    if DEFG==None or DEFG==0 or DEFG=="0":
         pass
-    elif (DEFG == Dilation):
+    elif (DEFG==Dilation or DEFG==1 or DEFG=="1"):
         expand = Dilation(image)
         image  = expand.scaling(image, num_iter)
-    elif (DEFG == Erosion):
+    elif (DEFG==Erosion or DEFG==2 or DEFG=="2"):
         shrink = Erosion(image)
         image  = shrink.scaling(image, num_iter)
     else:
@@ -195,7 +195,7 @@ def trimap(image, name, size, number, DEFG=None, num_iter=0):
             if (remake[i,j] != 0 and remake[i,j] != 255):
                 remake[i,j] = 127
 
-    path = "./images/results/" ## Change the directory
+    path = "../images/results/" ## Change the directory
     new_name = '{}px_'.format(size) + name + '_{}.png'.format(number)
     cv2.imwrite(os.path.join(path , new_name) , remake)
 
@@ -203,10 +203,10 @@ def trimap(image, name, size, number, DEFG=None, num_iter=0):
 ###             TESTING SECTION           ###
 #############################################
 if __name__ == '__main__':
-    path  = "./images/test_images/test_image_9.png"
-    image = extractImage(path)
-    size = 20
-    number = path[-5]
-    title = "test_image"
+    path    = "../images/test_images/test_image_9.png"
+    image   = extractImage(path)
+    size    = 25
+    number  = path[-5]
+    title   = "test_image"
     # trimap(image, title, size, number, DEFG=None)
-    trimap(image, title, size, number, DEFG=None)
+    trimap(image, title, size, number, DEFG=0)
