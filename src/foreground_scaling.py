@@ -93,12 +93,12 @@ class Dilation(FGScale):
 #############################################
 if __name__ == '__main__':
 
-    path  = "./images/test_images/test_image_12.png";
+    path  = "./images/test_images/test_image_12.png"
     image = extractImage(path)
 
-    unit01  = Erosion(image);
-    new_image = unit01.scaling(image, 8);
+    unit01  = Erosion(image)
+    new_image = unit01.scaling(image, 2)
 
-    cv2.imshow('Displayed Image', new_image);
-    cv2.waitKey(0);
-    cv2.destroyAllWindows();
+    cv2.imshow('Displayed Image', new_image)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()

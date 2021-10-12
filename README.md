@@ -28,12 +28,14 @@ On the other hand, <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha_p"
 <br /><b>Input:</b> a binary image (from a segmented lesion)
 <br /><b>Output:</b> a trimap with unknown region (gray) from tumor dilation <br/>
 
+## Flow Chart ##
+<p align="center"> <img src = "./assets/flowcharts/trimap_flowchart_small.png"> </p>
+
 ---
 **TO DO:**
-- [X] **OOP Class Design** -- create an abstract base class (ABC) that allows either foreground erosion or dilation prior to trimap generaition
 - [ ] **Finding The Most Dominant Foreground** -- automatic kernel design (generate an odd-sized matrix from an integer)
-- [ ] **Performance Optimization** -- for-loop optimization to accomodate large-sized images
 - [ ] **Contour Detection Module** -- an alternative method to circumscribe foreground without U-Net segmentation
+- [ ] **Mask Contour Module** -- create a binary mask from contour point polygon
 
 ## Examples ##
 **1 Dilating the binary image (trimap_module.py)** <br/>
@@ -95,6 +97,10 @@ The illustration starts with zero erosion/dilation; followed with one, three, fi
   </tr>
 </table>
 </p><br />
+
+
+**4 Image Processing using Feature Extraction Module (feature_extraction.py)** <br/>
+**Coming Soon**
 
 ## References ##
 1. Vikas Gupta and Shanmuganathan Raman. (2017). "Automatic Trimap Generation for Image Matting". Indian Institute of Technology, Gandhinagar, IND [download](https://arxiv.org/pdf/1707.00333.pdf)

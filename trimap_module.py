@@ -4,7 +4,7 @@ import numpy as np
 
 def extractImage(path):
     # error handller if the intended path is not found
-    image = cv2.imread(path, cv2.IMREAD_GRAYSCALE);
+    image = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
     return image
 
 def checkImage(image):
@@ -18,27 +18,23 @@ def checkImage(image):
 
     """
     if len(image.shape) > 2:
-        print("ERROR: non-binary image (RGB)");
-        sys.exit();
+        print("ERROR: non-binary image (RGB)"); sys.exit();
 
-    smallest = image.min(axis=0).min(axis=0); # lowest pixel value; should be 0 (black)
-    largest  = image.max(axis=0).max(axis=0); # highest pixel value; should be 1 (white)
+    smallest = image.min(axis=0).min(axis=0) # lowest pixel value: 0 (black)
+    largest  = image.max(axis=0).max(axis=0) # highest pixel value: 1 (white)
 
     if (smallest == 0 and largest == 0):
-        print("ERROR: non-binary image (all black)");
-        sys.exit();
+        print("ERROR: non-binary image (all black)"); sys.exit()
     elif (smallest == 255 and largest == 255):
-        print("ERROR: non-binary image (all white)");
-        sys.exit();
+        print("ERROR: non-binary image (all white)"); sys.exit()
     elif (smallest > 0 or largest < 255 ):
-        print("ERROR: non-binary image (grayscale)");
-        sys.exit();
+        print("ERROR: non-binary image (grayscale)"); sys.exit()
     else:
         return True
 
 class Toolbox:
     def __init__(self, image):
-        self.image = image;
+        self.image = image
 
     @property
     def printImage(self):
@@ -60,15 +56,15 @@ class Toolbox:
         Display the image on a window
         Press any key to exit
         """
-        cv2.imshow('Displayed Image', self.image);
-        cv2.waitKey(0);
-        cv2.destroyAllWindows(); 
+        cv2.imshow('Displayed Image', self.image)
+        cv2.waitKey(0)
+        cv2.destroyAllWindows()
 
     def saveImage(self, title, extension):
         """
         Save as a specific image format (bmp, png, or jpeg)
         """
-        cv2.imwrite("{}.{}".format(title,extension), self.image);        
+        cv2.imwrite("{}.{}".format(title,extension), self.image)
 
     def morph_open(self, image, kernel):
         """
@@ -102,13 +98,11 @@ def trimap(image, name, size, number, erosion=False):
                 the last argument is optional; i.e., how many iterations will the image get eroded
     Output    : a trimap
     """
-    checkImage(image);
-    
-    row    = image.shape[0];
-    col    = image.shape[1];
-
-    pixels = 2*size + 1;                                     ## Double and plus 1 to have an odd-sized kernel
-    kernel = np.ones((pixels,pixels),np.uint8)               ## How many pixel of extension do I get
+    checkImage(image)
+    row    = image.shape[0]
+    col    = image.shape[1]
+    pixels = 2*size + 1      ## Double and plus 1 to have an odd-sized kernel
+    kernel = np.ones((pixels,pixels),np.uint8)   ## Pixel of extension I get
 
     if erosion is not False:
         erosion = int(erosion)
@@ -117,8 +111,8 @@ def trimap(image, name, size, number, erosion=False):
         image = np.where(image > 0, 255, image)                       ## Any gray-clored pixel becomes white (smoothing)
         # Error-handler to prevent entire foreground annihilation
         if cv2.countNonZero(image) == 0:
-            print("ERROR: foreground has been entirely eroded");
-            sys.exit();
+            print("ERROR: foreground has been entirely eroded")
+            sys.exit()
 
     dilation  = cv2.dilate(image, kernel, iterations = 1)
 
@@ -137,33 +131,32 @@ def trimap(image, name, size, number, erosion=False):
     for i in range(0,row):
         for j in range (0,col):
             if (remake[i,j] != 0 and remake[i,j] != 255):
-                remake[i,j] = 127;
+                remake[i,j] = 127
 
-    path = "./images/results/"                                  ## Change the directory
-    new_name = '{}px_'.format(size) + name + '_{}.png'.format(number);
-    cv2.imwrite(os.path.join(path , new_name) , remake)
+    path = "./images/results/"  ## Change the directory
+    new_name = '{}px_'.format(size) + name + '_{}.png'.format(number)
+    cv2.imwrite(os.path.join(path, new_name) , remake)
 
 
 #############################################
 ###             TESTING SECTION           ###
 #############################################
 if __name__ == '__main__':
-
-    path  = "./images/test_images/test_image_11.png";
+    path  = "./images/test_images/test_image_11.png"
     image = extractImage(path)
 
-    size = 10;
-    number = path[-5];
+    size = 10
+    number = path[-5]
     title = "test_image"
 
     unit01  = Toolbox(image);
-    kernel1 = np.ones( (11,11), np.uint8 );
-    unit01.displayImage;
+    kernel1 = np.ones( (11,11), np.uint8 )
+    unit01.displayImage
     
-    opening = unit01.morph_close(image,kernel1);
-    trimap(opening, title, size, number, erosion=False);
-    unit02  = Toolbox(opening);
-    unit02.displayImage;
+    opening = unit01.morph_close(image,kernel1)
+    trimap(opening, title, size, number, erosion=False)
+    unit02  = Toolbox(opening)
+    unit02.displayImage
 
     ########################################################
     ## Default instruction (no binary opening or closing  ##
